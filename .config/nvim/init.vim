@@ -11,6 +11,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'ap/vim-css-color'
 Plug 'mbbill/undotree'
 Plug 'liuchengxu/vim-which-key'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " Switches from vi-compatible mode and enables useful vim functionality
