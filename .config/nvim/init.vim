@@ -15,6 +15,9 @@ call plug#end()
 " Switches from vi-compatible mode and enables useful vim functionality
 set nocompatible
 
+" dont break words when wrapping
+set linebreak
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -28,7 +31,7 @@ set number
 set relativenumber
 
 " Start scrolling when near bottom of page
-set scrolloff=10
+set scrolloff=15
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -66,14 +69,11 @@ let mapleader = " "
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
 
-" Enable mouse support. You should avoid relying on this too much, but it can
-" sometimes be convenient.
-set mouse+=a
-
 " Fix tab size
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set shiftround
 
 " Smart indentation
 set smartindent
@@ -91,3 +91,5 @@ set splitbelow splitright
 set undodir=~/.config/nvim/undodir
 set undofile
 
+" use terminal colors
+set termguicolors

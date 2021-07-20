@@ -15,7 +15,7 @@ cmd bulkrename $vidir
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
-md extract ${{
+cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	printf "%s\n\t" "$fx"
