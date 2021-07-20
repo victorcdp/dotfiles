@@ -93,3 +93,13 @@ set undofile
 
 " use terminal colors
 set termguicolors
+
+" put column for linting
+set signcolumn=yes
+
+" remaps for moving selected text
+vnoremap <leader>J :m '>+1<CR>gv=gv
+vnoremap <leader>K :m '<-2<CR>gv=gv
+
+" remap for UndoTree
+nnoremap <F5> :UndotreeToggle<CR>
