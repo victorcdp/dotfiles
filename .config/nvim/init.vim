@@ -10,6 +10,7 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'ap/vim-css-color'
 Plug 'mbbill/undotree'
+Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 " Switches from vi-compatible mode and enables useful vim functionality
@@ -103,3 +104,6 @@ vnoremap <leader>K :m '<-2<CR>gv=gv
 
 " remap for UndoTree
 nnoremap <F5> :UndotreeToggle<CR>
+
+"remap for vim whick key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
