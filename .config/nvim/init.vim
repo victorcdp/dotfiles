@@ -8,10 +8,10 @@ endif
 
 " Plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-Plug 'ap/vim-css-color'
-Plug 'mbbill/undotree'
-Plug 'liuchengxu/vim-which-key'
-Plug 'justinmk/vim-sneak'
+	Plug 'ap/vim-css-color'
+	Plug 'mbbill/undotree'
+	Plug 'liuchengxu/vim-which-key'
+	Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " Switches from vi-compatible mode and enables useful vim functionality
@@ -55,7 +55,7 @@ set nohlsearch
 set incsearch
 
 " Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+nnoremap Q gq " map Q to format/break lines of current paragraph
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
