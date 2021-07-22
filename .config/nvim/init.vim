@@ -12,6 +12,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'mbbill/undotree'
 	Plug 'liuchengxu/vim-which-key'
 	Plug 'justinmk/vim-sneak'
+	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Switches from vi-compatible mode and enables useful vim functionality
@@ -100,11 +101,23 @@ set termguicolors
 set signcolumn=yes
 
 " remaps for moving selected text
-vnoremap <leader>J :m '>+1<CR>gv=gv
-vnoremap <leader>K :m '<-2<CR>gv=gv
+xnoremap J :m '>+1<CR>gv=gv
+xnoremap K :m '<-2<CR>gv=gv
 
 " remap for UndoTree
 nnoremap <F5> :UndotreeToggle<CR>
 
 "remap for vim whick key
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+" remap splits navigation to just Ctrl + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" remaps for adjusting split sizes
+nnoremap <silent> <C-Left> :vertical resize +3<CR>
+nnoremap <silent> <C-Right> :vertical resize -3<CR>
+nnoremap <silent> <C-Up> :resize +3<CR>
+nnoremap <silent> <C-Down> :resize -3<CR>
