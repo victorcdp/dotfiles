@@ -1,9 +1,18 @@
+----------Blogs----------
 # Blogs 
 https://lukesmith.xyz/rss.xml "blogs"
-
+" "
+----------Podcasts----------
 # Podcasts
 https://notrelated.libsyn.com/rss "podcasts"
 http://feeds.nightvalepresents.com/welcometonightvalepodcast "podcasts"
-
-# Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)" "youtube"
+" "
+----------Videos----------
+# Videos
+https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3 "~Luke Smith (Peertube)" "videos"
+" "
+----------Artists----------
+# Artists
+https://www.artstation.com/aenamiart.rss "artists" "~Alena Aenami"
+https://www.artstation.com/mattialau.rss "artists" "~Mattia Lau"
+" "

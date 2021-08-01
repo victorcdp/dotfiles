@@ -12,7 +12,6 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'mbbill/undotree'
 	Plug 'liuchengxu/vim-which-key'
 	Plug 'justinmk/vim-sneak'
-	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Switches from vi-compatible mode and enables useful vim functionality
