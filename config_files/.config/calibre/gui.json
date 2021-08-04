@@ -1,0 +1,224 @@
+{
+  "action-layout-context-menu": [
+    "Edit Metadata",
+    "Send To Device",
+    "Save To Disk",
+    "Copy To Library",
+    null,
+    "Convert Books",
+    "View",
+    "Open Folder",
+    "Show Book Details",
+    "Similar Books",
+    "Tweak ePub",
+    null,
+    "Remove Books"
+  ],
+  "action-layout-context-menu-cover-browser": [
+    "Edit Metadata",
+    "Send To Device",
+    "Save To Disk",
+    "Copy To Library",
+    null,
+    "Convert Books",
+    "View",
+    "Open Folder",
+    "Show Book Details",
+    "Similar Books",
+    "Tweak ePub",
+    null,
+    "Remove Books",
+    null,
+    "Autoscroll Books"
+  ],
+  "action-layout-context-menu-split": [
+    "Edit Metadata",
+    "Send To Device",
+    "Save To Disk",
+    "Copy To Library",
+    null,
+    "Convert Books",
+    "View",
+    "Open Folder",
+    "Show Book Details",
+    "Tweak ePub",
+    null,
+    "Remove Books"
+  ],
+  "action-layout-toolbar": [
+    "Add Books",
+    "Edit Metadata",
+    null,
+    "Convert Books",
+    "View",
+    null,
+    "Remove Books",
+    "Choose Library",
+    "Save To Disk",
+    "Tweak ePub",
+    "Polish Books",
+    "Preferences"
+  ],
+  "action-layout-toolbar-device": [
+    "Add Books",
+    "Edit Metadata",
+    null,
+    "Convert Books",
+    "View",
+    "Send To Device",
+    null,
+    null,
+    "Location Manager",
+    null,
+    null,
+    "Save To Disk",
+    null,
+    "Remove Books",
+    null,
+    "Tweak ePub",
+    "Polish Books",
+    "Preferences"
+  ],
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAAA7QAAAU8AAAEZAf////8BAAAAAQA="
+  },
+  "book_details_splitter_horizontal_state": [
+    true,
+    200
+  ],
+  "book_list_pin_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "cover_browser_splitter_vertical_state": [
+    false,
+    300
+  ],
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
+  "grid view visible": false,
+  "library_usage_stats": {
+    "/home/victorc/Victor/Books/Library": 13,
+    "/home/victorc/Victor/Files/Books/Library": 13
+  },
+  "metasingle_window_geometry3": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAAZAAAAHAAAB1IAAAP0AAAAGQAAABwAAAdSAAAD9AAAAAAAAAAAB4AAAAAZAAAAHAAAB1IAAAP0"
+  },
+  "preferences dialog geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAHrAAAAjgAABZQAAAN9AAAB7wAAAKoAAAWQAAADeQAAAAAAAAAAB4AAAAHvAAAAqgAABZAAAAN5"
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "recently_used_languages": [
+    "English"
+  ],
+  "search bar visible": true,
+  "single-cover-fetch-dialog-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAIJAAAAwAAABVoAAAMXAAACCQAAAMAAAAVaAAADFwAAAAAAAAAAB4AAAAIJAAAAwAAABVoAAAMX"
+  },
+  "tag browser search box visible": false,
+  "tag_browser_splitter_horizontal_state": [
+    true,
+    200
+  ]
+}

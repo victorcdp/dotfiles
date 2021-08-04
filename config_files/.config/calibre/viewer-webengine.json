@@ -1,0 +1,338 @@
+{
+  "configure-viewer-toolbar-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAKDAAAAywAABPQAAAMHAAAChwAAAOcAAATwAAADAwAAAAAAAAAAB4AAAAKHAAAA5wAABPAAAAMD"
+  },
+  "local_storage": {
+    "simple_input_history_net_search_url": [
+      "https://google.com/search?q={q}"
+    ]
+  },
+  "main_window_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAIvAAAAtQAABZwAAANaAAACLwAAALUAAAWcAAADWgAAAAAAAAAAB4AAAAIvAAAAtQAABZwAAANa"
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAEAAAACpvwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAAAAACpgAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAxQAAADXAAAAmgD///8AAAABAAABAAAAAqb8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACEAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAAAAACpgAAANIA////AAADPAAAAqYAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHIDAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "saved-search-settings": {
+    "evil": {
+      "case_sensitive": false,
+      "mode": "normal"
+    },
+    "i am convinced": {
+      "case_sensitive": false,
+      "mode": "normal"
+    },
+    "world": {
+      "case_sensitive": false,
+      "mode": "normal"
+    }
+  },
+  "session_data": {
+    "controls_footer": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "progress"
+    },
+    "controls_help_shown_count": 2,
+    "current_color_scheme": "white",
+    "footer": {
+      "left": "pos-book",
+      "middle": "empty",
+      "right": "progress"
+    },
+    "header": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "hide_tooltips": null,
+    "keyboard_shortcuts": {
+      "next_section": [
+        {
+          "altKey": false,
+          "ctrlKey": true,
+          "key": "PageDown",
+          "metaKey": false,
+          "shiftKey": false
+        },
+        {
+          "altKey": false,
+          "ctrlKey": true,
+          "key": "ArrowDown",
+          "metaKey": false,
+          "shiftKey": false
+        }
+      ],
+      "previous_section": [
+        {
+          "altKey": false,
+          "ctrlKey": true,
+          "key": "PageUp",
+          "metaKey": false,
+          "shiftKey": false
+        },
+        {
+          "altKey": false,
+          "ctrlKey": true,
+          "key": "ArrowUp",
+          "metaKey": false,
+          "shiftKey": false
+        }
+      ]
+    },
+    "left-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "right-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_window_geometry": true,
+      "show_actions_toolbar": true
+    },
+    "standalone_recently_opened": [
+      {
+        "authors": [
+          "Eric Steven Raymond"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Eric S. Raymond - The Art of UNIX Programming-Addison-Wesley Professional (2003).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Eric S. Raymond - The Art of UNIX Programming-Addison-Wesley Professional (2003).epub",
+        "timestamp": "2021-07-28T17:29:05.892Z",
+        "title": "The Art of Unix Programming"
+      },
+      {
+        "authors": [
+          "Gary Ferguson"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Gary Ferguson - Eight Master Lessons of Nature_ What Nature Teaches Us About Living Well In The World-Doubleday (2019).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Gary Ferguson - Eight Master Lessons of Nature_ What Nature Teaches Us About Living Well In The World-Doubleday (2019).epub",
+        "timestamp": "2021-07-20T20:28:52.120Z",
+        "title": "The Eight Master Lessons of Nature"
+      },
+      {
+        "authors": [
+          "Alfie Kohn"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Alfie Kohn - Punished by rewards_ the trouble with gold stars, incentive plans, A's, praise, and other bribes-Houghton Mifflin Co (2010).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Alfie Kohn - Punished by rewards_ the trouble with gold stars, incentive plans, A's, praise, and other bribes-Houghton Mifflin Co (2010).epub",
+        "timestamp": "2021-07-20T01:29:50.028Z",
+        "title": "Punished by Rewards"
+      },
+      {
+        "authors": [
+          "Neil Gaiman"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Library/Neil Gaiman/Norse Mythology (2840)/Norse Mythology - Neil Gaiman.azw3",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Library/Neil Gaiman/Norse Mythology (2840)/Norse Mythology - Neil Gaiman.azw3",
+        "timestamp": "2021-07-19T17:32:01.300Z",
+        "title": "Norse Mythology"
+      },
+      {
+        "authors": [
+          "Jackson Crawford"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/The Saga of the Volsungs - Jackson Crawford.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/The Saga of the Volsungs - Jackson Crawford.epub",
+        "timestamp": "2021-07-17T14:11:30.372Z",
+        "title": "The Saga of the Volsungs"
+      },
+      {
+        "authors": [
+          "Jackson Crawford"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Crawford, Jackson - The Poetic Edda.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Crawford, Jackson - The Poetic Edda.epub",
+        "timestamp": "2021-07-17T14:08:26.902Z",
+        "title": "The Poetic Edda: Stories of the Norse Gods and Heroes (Hackett Classics)"
+      },
+      {
+        "authors": [
+          "Joel Salatin"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Joel Salatin - Everything I Want to Do Is Illegal_ War Stories from the Local Food Front (2018).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Joel Salatin - Everything I Want to Do Is Illegal_ War Stories from the Local Food Front (2018).epub",
+        "timestamp": "2021-07-15T17:13:21.720Z",
+        "title": "Everything I Want to Do Is Illegal: War Stories from the Local Food Front"
+      },
+      {
+        "authors": [
+          "Menco Stern",
+          "Sigmon M. Stern"
+        ],
+        "key": "/home/victorc/Victor/Files/languages/german/Studien und Plaudereien. Second Series.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/languages/german/Studien und Plaudereien. Second Series.epub",
+        "timestamp": "2021-07-14T23:08:44.689Z",
+        "title": "Studien und Plaudereien im Vaterland. Second Series"
+      },
+      {
+        "authors": [
+          "Sigmon M. Stern"
+        ],
+        "key": "/home/victorc/Victor/Files/languages/german/Studien und Plaudereien. First Series.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/languages/german/Studien und Plaudereien. First Series.epub",
+        "timestamp": "2021-07-14T23:07:40.166Z",
+        "title": "Studien und Plaudereien. First Series"
+      },
+      {
+        "authors": [
+          "Berne, Eric"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Library/Eric Berne/Games People Play_ The Psychology of Human Relationships (4737)/Games People Play_ The Psychology of Human - Eric Berne.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Library/Eric Berne/Games People Play_ The Psychology of Human Relationships (4737)/Games People Play_ The Psychology of Human - Eric Berne.epub",
+        "timestamp": "2021-06-30T12:56:14.774Z",
+        "title": "Games People Play: The Psychology of Human Relationships"
+      },
+      {
+        "authors": [
+          "Schumpeter, Joseph A., Stiglitz, Joseph"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Library/Schumpeter, Joseph A., Stiglitz, Joseph/Capitalism, Socialism and Democracy (4736)/Capitalism, Socialism and Democracy - Schumpeter, Joseph A., Stiglitz, Joseph.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Library/Schumpeter, Joseph A., Stiglitz, Joseph/Capitalism, Socialism and Democracy (4736)/Capitalism, Socialism and Democracy - Schumpeter, Joseph A., Stiglitz, Joseph.epub",
+        "timestamp": "2021-06-30T12:55:10.244Z",
+        "title": "Capitalism, Socialism and Democracy"
+      },
+      {
+        "authors": [
+          "Sir Thomas Malory",
+          "Lord Alfred Tennyson",
+          "Maude Radford Warren",
+          "Sir James Knowles",
+          "Mark Twain",
+          "Maplewood Books"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Library/Sir Thomas Malory/King Arthur Collection (4740)/King Arthur Collection - Sir Thomas Malory.epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Library/Sir Thomas Malory/King Arthur Collection (4740)/King Arthur Collection - Sir Thomas Malory.epub",
+        "timestamp": "2021-06-30T12:52:08.265Z",
+        "title": "King Arthur Collection (Including Le Morte d'Arthur, Idylls of the King, King Arthur and His Knights, Sir Gawain and the Green Knight, and A Connecticut Yankee in King Arthur's Court)"
+      },
+      {
+        "authors": [
+          "Kate Forrester"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Library/Kate Forrester/Celtic Tales_ Fairy Tales and Stories of Enchantment from Ireland, Scotland, Brittany, and Wale (4746)/Celtic Tales_ Fairy Tales and Stories of E - Kate Forrester.azw3",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Library/Kate Forrester/Celtic Tales_ Fairy Tales and Stories of Enchantment from Ireland, Scotland, Brittany, and Wale (4746)/Celtic Tales_ Fairy Tales and Stories of E - Kate Forrester.azw3",
+        "timestamp": "2021-06-30T12:51:25.274Z",
+        "title": "Celtic Tales: Fairy Tales and Stories of Enchantment from Ireland, Scotland, Brittany, and Wales"
+      },
+      {
+        "authors": [
+          "David Hackett Fischer"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/David Hackett Fischer - Albion's Seed_ Four British Folkways in America (America_ a Cultural History)-Oxford University Press, USA (1989).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/David Hackett Fischer - Albion's Seed_ Four British Folkways in America (America_ a Cultural History)-Oxford University Press, USA (1989).epub",
+        "timestamp": "2021-06-30T12:17:43.049Z",
+        "title": "Albion's Seed"
+      },
+      {
+        "authors": [
+          "Schumpeter, Joseph A., Stiglitz, Joseph"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/(Routledge classics) Schumpeter, Joseph A., Stiglitz, Joseph - Capitalism, Socialism and Democracy-Taylor & Francis_Routledge (2010).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/(Routledge classics) Schumpeter, Joseph A., Stiglitz, Joseph - Capitalism, Socialism and Democracy-Taylor & Francis_Routledge (2010).epub",
+        "timestamp": "2021-06-30T12:14:59.991Z",
+        "title": "Capitalism, Socialism and Democracy"
+      },
+      {
+        "authors": [
+          "Julian Jaynes"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Julian Jaynes - The origin of consciousness in the breakdown of the bicameral mind-Houghton Mifflin Harcourt (2000).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Julian Jaynes - The origin of consciousness in the breakdown of the bicameral mind-Houghton Mifflin Harcourt (2000).epub",
+        "timestamp": "2021-06-30T12:13:13.932Z",
+        "title": "The Origin of Consciousness in the Breakdown of the Bicameral Mind"
+      },
+      {
+        "authors": [
+          "Francis Stuart Campbell"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Erik Ritter von Kuehnelt-Leddihn - Menace of the Herd or Procrustes at Large-Ludwig von Mises Institute (2012).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Erik Ritter von Kuehnelt-Leddihn - Menace of the Herd or Procrustes at Large-Ludwig von Mises Institute (2012).epub",
+        "timestamp": "2021-06-30T12:06:46.571Z",
+        "title": "The Menace of the Herd, or Procrustes at Large"
+      },
+      {
+        "authors": [
+          "Alan Sokal"
+        ],
+        "key": "/home/victorc/Victor/Files/Books/Sokal, Alan D._ Bricmont, Jean - Fashionable nonsense _ postmodern intellectuals' abuse of science-Picador USA (1998).epub",
+        "pathtoebook": "/home/victorc/Victor/Files/Books/Sokal, Alan D._ Bricmont, Jean - Fashionable nonsense _ postmodern intellectuals' abuse of science-Picador USA (1998).epub",
+        "timestamp": "2021-06-30T12:01:41.859Z",
+        "title": "Fashionable Nonsense"
+      },
+      {
+        "authors": [
+          "Berne, Eric"
+        ],
+        "key": "/home/victorc/Victor/Books/Berne, Eric - Games People Play_ The Psychology of Human Relationships-Penguin UK (1973).epub",
+        "pathtoebook": "/home/victorc/Victor/Books/Berne, Eric - Games People Play_ The Psychology of Human Relationships-Penguin UK (1973).epub",
+        "timestamp": "2021-05-14T16:53:50.968Z",
+        "title": "Games People Play: The Psychology of Human Relationships"
+      },
+      {
+        "authors": [
+          "Sophocles"
+        ],
+        "key": "/home/victorc/Victor/Books/Library/Sophocles/The Complete Plays of Sophocles (3120)/The Complete Plays of Sophocles - Sophocles.epub",
+        "pathtoebook": "/home/victorc/Victor/Books/Library/Sophocles/The Complete Plays of Sophocles (3120)/The Complete Plays of Sophocles - Sophocles.epub",
+        "timestamp": "2021-05-14T16:50:30.422Z",
+        "title": "The Complete Plays of Sophocles"
+      },
+      {
+        "authors": [
+          "Lew Wallace"
+        ],
+        "key": "/home/victorc/Victor/Books/Lew Wallace - Ben-Hur; A Tale of the Christ.epub",
+        "pathtoebook": "/home/victorc/Victor/Books/Lew Wallace - Ben-Hur; A Tale of the Christ.epub",
+        "timestamp": "2021-05-14T16:47:50.185Z",
+        "title": "Ben-Hur: A Tale of the Christ"
+      },
+      {
+        "authors": [
+          "Apollonius of Rhodes"
+        ],
+        "key": "/home/victorc/Victor/Books/Library/Apollonius of Rhodes/Jason and the Argonauts (3137)/Jason and the Argonauts - Apollonius of Rhodes.epub",
+        "pathtoebook": "/home/victorc/Victor/Books/Library/Apollonius of Rhodes/Jason and the Argonauts (3137)/Jason and the Argonauts - Apollonius of Rhodes.epub",
+        "timestamp": "2021-05-14T16:43:18.802Z",
+        "title": "Jason and the Argonauts"
+      },
+      {
+        "authors": [
+          "T. H. White"
+        ],
+        "key": "/home/victorc/Victor/Books/Library/T. H. White/The Once and Future King (904)/The Once and Future King - T. H. White.azw3",
+        "pathtoebook": "/home/victorc/Victor/Books/Library/T. H. White/The Once and Future King (904)/The Once and Future King - T. H. White.azw3",
+        "timestamp": "2021-05-14T16:42:26.886Z",
+        "title": "The Once and Future King"
+      },
+      {
+        "authors": [
+          "Carolyne Larrington"
+        ],
+        "key": "/home/victorc/Victor/Books/Library/Carolyne Larrington/The Poetic Edda (3281)/The Poetic Edda - Carolyne Larrington.epub",
+        "pathtoebook": "/home/victorc/Victor/Books/Library/Carolyne Larrington/The Poetic Edda (3281)/The Poetic Edda - Carolyne Larrington.epub",
+        "timestamp": "2021-05-14T16:40:58.451Z",
+        "title": "The Poetic Edda (Oxford World's Classics)"
+      },
+      {
+        "authors": [
+          "J. Clark Scott"
+        ],
+        "key": "/home/victorc/Victor/Books/J Clark Scott - But How Do It Know_ - The Basic Principles of Computers for Everyone-John C. Scott (2009).epub",
+        "pathtoebook": "/home/victorc/Victor/Books/J Clark Scott - But How Do It Know_ - The Basic Principles of Computers for Everyone-John C. Scott (2009).epub",
+        "timestamp": "2021-05-14T16:38:08.403Z",
+        "title": "But How Do It Know?"
+      }
+    ]
+  },
+  "viewer-search-case-sensitive": false,
+  "viewer-search-mode": "normal"
+}

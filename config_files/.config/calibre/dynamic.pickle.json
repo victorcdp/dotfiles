@@ -1,0 +1,33 @@
+{
+  "add books dialog dir": "/home/victorc/Victor/Files/Books",
+  "choose library location": "/home/victorc/Victor/Files/Books/Library",
+  "database location dialog": "/home/victorc/Victor/Books/Library",
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "5.23",
+      "5.22",
+      "5.17"
+    ]
+  },
+  "sort_history": [
+    [
+      "#id",
+      false
+    ],
+    [
+      "ondevice",
+      false
+    ],
+    [
+      "#formats",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "kindle",
+  "welcome_wizard_was_run": true
+}
