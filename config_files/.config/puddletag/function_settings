@@ -1,0 +1,41 @@
+{
+  "puddlestuff.functions_autonumbering": {
+    "arguments": [
+      1,
+      false,
+      1
+    ],
+    "fields": [
+      "__all"
+    ]
+  },
+  "puddlestuff.functions_replace": {
+    "arguments": [
+      "\\\\",
+      ";",
+      true,
+      false
+    ],
+    "fields": [
+      "artist"
+    ]
+  },
+  "puddlestuff.functions_replaceWithReg": {
+    "arguments": [
+      "",
+      "",
+      false
+    ],
+    "fields": [
+      "__all"
+    ]
+  },
+  "puddlestuff.functions_split_by_sep": {
+    "arguments": [
+      ";"
+    ],
+    "fields": [
+      "__all"
+    ]
+  }
+}

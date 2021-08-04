@@ -1,0 +1,79 @@
+{
+  "panel": {
+    "numrows": "9"
+  },
+  "0": {
+    "tags": [
+      "title"
+    ],
+    "titles": [
+      "&Title"
+    ]
+  },
+  "1": {
+    "tags": [
+      "artist"
+    ],
+    "titles": [
+      "&Artist"
+    ]
+  },
+  "2": {
+    "tags": [
+      "albumartist"
+    ],
+    "titles": [
+      "Album Artist"
+    ]
+  },
+  "3": {
+    "tags": [
+      "album"
+    ],
+    "titles": [
+      "Al&bum"
+    ]
+  },
+  "4": {
+    "tags": [
+      "track",
+      "year"
+    ],
+    "titles": [
+      "T&rack",
+      "&Year"
+    ]
+  },
+  "5": {
+    "tags": [
+      "genre"
+    ],
+    "titles": [
+      "&Genre"
+    ]
+  },
+  "6": {
+    "tags": [
+      "comment"
+    ],
+    "titles": [
+      "&Comment"
+    ]
+  },
+  "7": {
+    "tags": [
+      "UNSYNCEDLYRICS"
+    ],
+    "titles": [
+      "Lyrics"
+    ]
+  },
+  "8": {
+    "tags": [
+      "LYRICS"
+    ],
+    "titles": [
+      "Lyrics"
+    ]
+  }
+}

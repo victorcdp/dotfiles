@@ -1,0 +1,37 @@
+{
+  "filter_text": {
+    "values": [
+      "",
+      ""
+    ]
+  },
+  "&Replace": {
+    "values": [
+      "",
+      "\\\\"
+    ]
+  },
+  "w&ith:": {
+    "values": [
+      "",
+      ";"
+    ]
+  },
+  "&Regular Expression": {
+    "values": [
+      "",
+      ""
+    ]
+  },
+  "Replace &matches with:": {
+    "values": [
+      "",
+      ";"
+    ]
+  },
+  "&Separator": {
+    "values": [
+      ";"
+    ]
+  }
+}
