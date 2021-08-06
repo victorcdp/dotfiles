@@ -1,0 +1,4 @@
+#!/bin/sh
+
+zip "${PWD##*/}.cbz" * ;
+mv "${PWD##*/}.cbz" ./.. ;
