@@ -1,4 +1,8 @@
 #!/bin/sh
 
+extension=${1:-jpg} ;
+
+ls | cat -n | while read n f; do mv "$f" `printf "%04d.$extension" $n`; done
 zip "${PWD##*/}.cbz" * ;
 mv "${PWD##*/}.cbz" ./.. ;
+cd .. ;

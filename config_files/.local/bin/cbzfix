@@ -1,0 +1,4 @@
+#!/bin/sh
+# This script takes all the folders of the current directory, enters each one, renames all the files to numbers (001, 002, ...), rezips everything and moves the zip to the parent directory
+
+for dir in ./*/ ; do (cd "$dir" && zipfolder); done
