@@ -1,4 +1,5 @@
 #!/bin/sh
-# This script takes all the folders of the current directory, enters each one, renames all the files to numbers (001, 002, ...), rezips everything and moves the zip to the parent directory
+# This script takes all the current directory's cbz files, extracts them, renames the files to incremental numbers, rezips them to .cbz and moves the .cbz to the current directory
 
-for dir in ./*/ ; do (cd "$dir" && zipfolder); done
+for file in *.cbz ; do (unzip "${file}" -d "${file%%.cbz}"); done ;
+for dir in ./*/ ; do (cd "$dir" && incrementalrename jpg && zipfolder cbz); done

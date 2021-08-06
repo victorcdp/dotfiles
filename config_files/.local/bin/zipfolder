@@ -1,8 +1,8 @@
 #!/bin/sh
+# This script zips the entire current directory and moves the zip to the parent directory, if no extension is passed, it defaults to .zip
 
-extension=${1:-jpg} ;
+extension=${1:-zip}
 
-ls | cat -n | while read n f; do mv "$f" `printf "%04d.$extension" $n`; done
-zip "${PWD##*/}.cbz" * ;
-mv "${PWD##*/}.cbz" ./.. ;
+zip "${PWD##*/}.$extension" * ;
+mv -v "${PWD##*/}.$extension" ./.. ;
 cd .. ;

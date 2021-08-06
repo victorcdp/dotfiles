@@ -1,0 +1,5 @@
+#!/bin/sh
+# this script renames all the files of the current directory to numbers (001, 002, 003, ....) if no extension is passed, it defaults to .jpg
+
+extension=${1:-jpg} ;
+ls | cat -n | while read n f; do mv "$f" `printf "%04d.$extension" $n`; done
