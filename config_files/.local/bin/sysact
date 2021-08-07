@@ -9,10 +9,10 @@ case "$(readlink -f /sbin/init)" in
 esac
 
 cmds="\
-🔒 lock		slock
+🔒 lock		betterlockscreen -l dim
 🚪 leave dwm	kill -TERM $(pgrep -u $USER "\bdwm$")
 ♻ renew dwm	kill -HUP $(pgrep -u $USER "\bdwm$")
-🐻 hibernate	slock ${hib:-systemctl suspend-then-hibernate -i}
+🐻 hibernate	${hib:-systemctl suspend-then-hibernate -i}
 🔃 reboot	${reb:-sudo -A reboot}
 🖥 shutdown	${shut:-sudo -A shutdown -h now}
 📺 display off 	 xset dpms force off"
