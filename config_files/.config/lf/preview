@@ -30,9 +30,9 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.zip|*.jar|*.war|*.ear|*.oxt) unzip -l "$1" ;;
 	*.cbz)
 		cover="`zipinfo -2 "$1" | awk 'NR==2 {exit} 1'`";
-		unzip "$1" "$cover" -d "${XDG_CACHE_HOME}/lf/";
-		mv "${XDG_CACHE_HOME}/lf/$cover" "${XDG_CACHE_HOME}/lf/cover.jpg"
-		image "${XDG_CACHE_HOME}/lf/cover.jpg" "$2" "$3" "$4" "$5" ;;
+		unzip "$1" "$cover" -d "${XDG_CACHE_HOME}/lf/" && 
+		mv "${XDG_CACHE_HOME}/lf/$cover" "${XDG_CACHE_HOME}/lf/cover.jpg" && 
+		image "${XDG_CACHE_HOME}/lf/cover.jpg" "$2" "$3" "$4" "$5" || unzip -l "$1";;
 	*.rar) unrar l "$1" ;;
 	*.7z) 7z l "$1" ;;
 	*.[1-8]) man "$1" | col -b ;;

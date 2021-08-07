@@ -1,5 +1,35 @@
 #!/bin/sh
-# This script takes all the current directory's cbz files, extracts them, renames the files to incremental numbers, rezips them to .cbz and moves the .cbz to the current directory
+# This script takes all the current directory's cbz files, extracts them,
+# renames the files to incremental numbers, rezips them to .cbz and moves the
+# new .cbz file to the current directory
 
-for file in *.cbz ; do (unzip "${file}" -d "${file%%.cbz}"); done ;
-for dir in ./*/ ; do (cd "$dir" && incrementalrename jpg && zipfolder cbz); done
+for file in *.cb[rz] ; do (
+	echo "Unzipping ${file}..." ;
+	unar "${file}" -d >/dev/null || unzip "${file}" -d "${file%%.cbz}" >/dev/null
+	);
+done ;
+
+echo "Unzipped all files." ;
+
+for dir in ./*/ ; do (
+	echo "Entering into folder ${dir}" &&
+	cd "$dir" &&
+	ls -d */ >/dev/null 2>&1 &&
+	if [ $? == 0 ]; then 
+		echo "Subfolder(s) Detected! Trying to fix..." &&
+		for subdir in ./*/;
+			do (cd "$subdir" && mv * ../ && cd .. && rmdir "$subdir") &&
+			echo "Fixed. Continuing..." || echo "Couldnt Fix it. Try to do it manually." ;
+		done
+	fi ;
+	echo "Renaming Files..." &&
+	incrementalrename jpg &&
+	echo "Zipping up folder and moving it to parent..." &&
+	zipfolder cbz >/dev/null &&
+	echo "Done with ${dir}. Deleting it and moving on to next folder..." &&
+	cd .. &&
+	rm -r "$dir" 
+	);
+done ;
+
+echo "Done with all folders."
