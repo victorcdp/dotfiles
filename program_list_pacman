@@ -1,10 +1,6 @@
 bc
-betterlockscreen
 dunst
-brave-bin
-lf
 libnotify
-libxft-bgra
 mpc
 mpd
 neofetch
@@ -14,7 +10,6 @@ noto-fonts-emoji
 pamixer
 pcmanfm
 picom
-puddletag
 pulseaudio
 pulseaudio-alsa
 pulsemixer
@@ -22,7 +17,6 @@ python-pywal
 sddm
 stow
 sxiv
-ttf-ms-fonts
 ueberzug
 unclutter
 xclip
@@ -53,7 +47,6 @@ atool
 fzf
 ffmpegthumbnailer
 imagemagick
-epub-thumbnailer-git
 bat
 p7zip
 catdoc
