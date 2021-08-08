@@ -18,8 +18,7 @@ esac
 
 # If pywal is installed, use it.
 command -v wal >/dev/null 2>&1 &&
-	wal -c &&
-	wal -i "$bgloc" &&
+	wal -i $(readlink "$bgloc") &&
 	pidof dwm >/dev/null && kill -HUP $(pidof dwm);
 
 xwallpaper --zoom "$bgloc"
