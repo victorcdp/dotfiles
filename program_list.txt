@@ -63,3 +63,4 @@ gnumeric
 iso-info
 transmission
 trash-cli
+openssh
