@@ -1,17 +1,22 @@
 ----------Blogs----------
 # Blogs 
 https://lukesmith.xyz/rss.xml "blogs"
+https://www.archlinux.org/feeds/news/ "blogs"
 " "
+
 ----------Podcasts----------
 # Podcasts
 https://notrelated.libsyn.com/rss "podcasts"
 http://feeds.nightvalepresents.com/welcometonightvalepodcast "podcasts"
 " "
+
 ----------Videos----------
 # Videos
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3 "~Luke Smith (Peertube)" "videos"
+https://odysee.com/$/rss/@AlphaNerd:8 "~Mental Outlaw (Odysee)" "videos"
 " "
-----------Artists----------
+
+----------Illustration_Artists----------
 # Artists
 https://www.artstation.com/aenamiart.rss "artists" "~Alena Aenami"
 https://www.artstation.com/mattialau.rss "artists" "~Mattia Lau"
@@ -26,4 +31,9 @@ https://backend.deviantart.com/rss.xml?q=gallery%3Aguweiz "artists" "~guweiz"
 https://backend.deviantart.com/rss.xml?q=gallery%3Azudartslee "artists" "~Zudartslee"
 https://www.behance.net/feeds/user?username=antoniobravo "artists" "~Antonio Bravo"
 https://www.behance.net/feeds/user?username=VoyagerIllustration "artists" "~Voyager Illustration"
+" "
+
+----------Music_Artists----------
+https://www.youtube.com/feeds/videos.xml?channel_id=UCiErxPh083dxFqvzmOE-iPw "music"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6G2vAJrt407lwiynW116Eg "music"
 " "
