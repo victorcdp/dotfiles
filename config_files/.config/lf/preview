@@ -31,8 +31,8 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.cbz)
 		cover="`zipinfo -2 "$1" | awk 'NR==2 {exit} 1'`";
 		unzip "$1" "$cover" -d "${XDG_CACHE_HOME}/lf/" && 
-		mv "${XDG_CACHE_HOME}/lf/$cover" "${XDG_CACHE_HOME}/lf/cover.jpg" && 
-		image "${XDG_CACHE_HOME}/lf/cover.jpg" "$2" "$3" "$4" "$5" || unzip -l "$1";;
+		mv "${XDG_CACHE_HOME}/lf/$cover" "${XDG_CACHE_HOME}/lf/thumbnail.jpg" &&
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5" || unzip -l "$1";;
 	*.rar) unrar l "$1" ;;
 	*.7z) 7z l "$1" ;;
 	*.[1-8]) man "$1" | col -b ;;
@@ -54,12 +54,12 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
 	*.epub|*.azw3|*.mobi)
-		[ ! -f "$CACHE" || rm -f "${CACHE}"] && \
-			epub-thumbnailer "$1" "$CACHE" 1024
-		image "$CACHE" "$2" "$3" "$4" "$5"
+		[ ! -f "$CACHE" || rm -f "${CACHE}" ] && \
+			epub-thumbnailer "$1" "${CACHE}.jpg" 1024
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
 	*.avi|*.mp4|*.wmv|*.dat|*.3gp|*.ogv|*.mkv|*.mpg|*.mpeg|*.vob|*.fl[icv]|*.m2v|*.mov|*.webm|*.ts|*.mts|*.m4v|*.r[am]|*.qt|*.divx)
-		[ ! -f "${CACHE}.jpg" ] && \
+		[ ! -f "${CACHE}.jpg" || rm -f "${CACHE}" ] && \
 			ffmpegthumbnailer -i "$1" -o "${CACHE}.jpg" -s 0 -q 5
 		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
