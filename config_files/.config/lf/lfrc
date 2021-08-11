@@ -15,7 +15,7 @@ set previewer ~/.config/lf/preview
 cmd open ${{
     case $(file --mime-type $f -b) in
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
-        text/*) $EDITOR $fx;;
+    text/*) $EDITOR $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	image/svg+xml) display -- $f ;;
 	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
@@ -49,6 +49,15 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
+cmd movetotrash ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "Move to Trash?[y/N]"
+	read ans
+	[ $ans = "y" ] && trash-put -- $fx
+}}
+
 cmd moveto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -74,18 +83,16 @@ cmd copyto ${{
 # Bindings
 map gh 
 map g top
-map D delete
+map D movetotrash
+map X delete
 map E extract
 map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
 map <c-r> reload
 map <c-s> set hidden!
+map . set hidden!
 map <enter> shell
 
-map A rename # at the very end
-map c push A<c-u> # new rename
-map I push A<c-a> # at the very beginning
-map i push A<a-b><a-b><a-f> # before extention
-map a push A<a-b> # after extention
+map R push A<c-u> # new rename
 map B bulkrename
