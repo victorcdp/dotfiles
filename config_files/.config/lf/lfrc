@@ -2,6 +2,7 @@
 set scrolloff 10
 set icons
 set period 1
+set drawbox
 set shell bash
 set shellopts '-eu'
 set ifs "\n"
@@ -94,5 +95,5 @@ map <c-s> set hidden!
 map . set hidden!
 map <enter> shell
 
-map R push A<c-u> # new rename
+map R push r<c-u> # new rename
 map B bulkrename

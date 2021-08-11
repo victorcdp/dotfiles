@@ -58,3 +58,4 @@ transmission-cli
 transmission-gtk
 trash-cli
 openssh
+xdotool
