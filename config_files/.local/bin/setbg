@@ -16,9 +16,10 @@ case "$(file --mime-type -b "$trueloc")" in
 	*) notify-send "Error" "Not a valid image." ; exit 1;;
 esac
 
+xwallpaper --zoom "$bgloc"
+
 # If pywal is installed, use it.
 command -v wal >/dev/null 2>&1 &&
-	wal -i $(readlink "$bgloc") &&
+	wal -n -i $(readlink "$bgloc") &&
 	pidof dwm >/dev/null && kill -HUP $(pidof dwm);
 
-xwallpaper --zoom "$bgloc"
