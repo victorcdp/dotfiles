@@ -1,9 +1,11 @@
 #!/bin/sh
 
-filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;s/\\[playing\\]/▶️/g;/^ERROR/Q" | paste -sd ' ' -;}
+filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d;/^ERROR/Q" | paste -sd ' ' -;}
+
+pidof -x sb-mpdup >/dev/null 2>&1 || sb-mpdup >/dev/null 2>&1 &
 
 case $BLOCK_BUTTON in
-	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, open ncmpcpp
+	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, pause/unpause
 	2) mpc toggle | filter ;;  # middle click, pause/unpause
 	3) mpc status | filter ; notify-send "🎵 Music module" "\- Shows mpd song playing.
 - ⏸ when paused.
