@@ -1,0 +1,6 @@
+#!/bin/sh
+# This script renames all files in the folder to have the current folder name prepended to the file name
+
+foldername=$(basename "$PWD")
+
+for file in *; do mv "$file" "$foldername"_"$file"; done
