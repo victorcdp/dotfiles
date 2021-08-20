@@ -66,6 +66,8 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <Esc>:w<CR>a
 
 " Set leader key to space
 let mapleader = " "
