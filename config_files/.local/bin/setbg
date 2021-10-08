@@ -20,6 +20,9 @@ xwallpaper --zoom "$bgloc"
 
 # If pywal is installed, use it.
 command -v wal >/dev/null 2>&1 &&
-	wal -n -i $(readlink "$bgloc") &&
-	pidof dwm >/dev/null && kill -HUP $(pidof dwm);
+	wal -n -i $(readlink "$bgloc");
+
+# if xdotool is installed, use it to refresh dwm
+#command -v xdotool >/dev/null 2>&1 &&
+#	xdotool key super+q;
 

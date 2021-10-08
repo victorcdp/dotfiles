@@ -1,25 +1,19 @@
-
 #!/bin/sh
+# Description: Script to get wifi and ethernet status
 
-# Show wifi 📶 and percent strength or 📡 if none.
-# Show 🌐 if connected to ethernet or ❎ if none.
-# Show 🔒 if a vpn connection is active
+source sb-status2d
 
-case $BLOCK_BUTTON in
-	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
-	3) notify-send "🌐 Internet module" "\- Click to connect
-📡: no wifi connection
-📶: wifi connection with quality
-❎: no ethernet
-🌐: ethernet working
-🔒: vpn is active
-" ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac
+show_wname=false
+show_ename=false
 
-case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
-	down) wifiicon="📡 " ;;
-	up) wifiicon="$(awk '/^\s*w/ { print "📶", int($3 * 100 / 70) "% " }' /proc/net/wireless)" ;;
-esac
+info="$(nmcli dev | grep 'wifi')"
+echo "$info" | grep -wq 'connected' && icon_wifi="直" || icon_wifi="睊"
+$show_wname && wname="$(echo "$info" | awk '$1=$2=$3=""; FNR == 1 {print $0};' | sed 's/^ *//g')"
 
-printf "%s%s%s\n" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)"
+info="$(nmcli dev | grep 'ethernet')"
+echo "$info" | grep -wq 'connected' && icon_ethr="" || icon_ethr=""
+$show_ename && ename="$(echo "$info" | awk '$1=$2=$3=""; FNR == 1 {print $0};' | sed 's/^ *//g')"
+
+printf "%s%s" "$s2d_color1" "[$icon_wifi" && $show_wname && printf " %s" "$wname"
+[ -n "$icon_ethr" ] && printf " %s%s" "$s2d_color9" "$icon_ethr" && $show_ename && printf " %s" "$ename"
+printf "%s" " ]$s2d_reset" && exit 0

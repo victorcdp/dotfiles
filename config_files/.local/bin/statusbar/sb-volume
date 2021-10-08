@@ -2,6 +2,8 @@
 
 # Prints the current volume or 🔇 if muted.
 
+source sb-status2d
+
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e pulsemixer ;;
 	2) pamixer -t ;;
@@ -13,16 +15,16 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-[ $(pamixer --get-mute) = true ] && echo 🔇 && exit
+[ $(pamixer --get-mute) = true ] && printf "%s%s%s" "$s2d_color4" "[婢 ]" "$s2d_reset" && exit
 
 vol="$(pamixer --get-volume)"
 
 if [ "$vol" -gt "70" ]; then
-	icon="🔊"
+	icon="墳"
 elif [ "$vol" -lt "30" ]; then
-	icon="🔈"
+	icon="奄"
 else
-	icon="🔉"
+	icon="奔"
 fi
 
-echo "$icon$vol%"
+printf "%s%s %s%%%s" "$s2d_color4" "[$icon" "$vol" "]$s2d_reset" && exit 0
