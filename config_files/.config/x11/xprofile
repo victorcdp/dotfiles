@@ -2,5 +2,9 @@
 
 xset r rate 300 50 &
 dunst &
+unclutter &
+mpd &
+mpc pause &
+dwmblocks &
 setbg ~/pictures/wallpapers &
 picom --no-vsync -b;
