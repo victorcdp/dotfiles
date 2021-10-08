@@ -15,4 +15,5 @@ map i recolor
 map p print
 map g goto top
 map = adjust_window "width"
-map <C-k>
+unmap <C-k>
+unmap <C-j>

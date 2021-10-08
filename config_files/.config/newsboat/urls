@@ -1,19 +1,23 @@
 ----------Blogs----------
 # Blogs 
 https://lukesmith.xyz/rss.xml "blogs"
-https://www.archlinux.org/feeds/news/ "blogs"
+https://bugswriter.com/blog/index.xml "blogs"
+https://www.archlinux.org/feeds/news/ "tech" "blogs"
 " "
 
 ----------Podcasts----------
 # Podcasts
 https://notrelated.libsyn.com/rss "podcasts"
 http://feeds.nightvalepresents.com/welcometonightvalepodcast "podcasts"
+https://anchor.fm/s/6344bafc/podcast/rss "podcasts"
 " "
 
-----------Videos----------
+----------Tech_Videos----------
 # Videos
-https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3 "~Luke Smith (Peertube)" "videos"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "~Mental Outlaw (Youtube)" "videos"
+https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3 "tech videos" "~Luke Smith (Peertube)" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "tech videos" "~Mental Outlaw (Youtube)" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "tech videos" "~Brodie Robertson (Youtube)" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "tech videos" "~DistroTube (Youtube)" 
 " "
 
 ----------Illustration_Artists----------
@@ -27,8 +31,6 @@ https://www.artstation.com/seventeenth.rss "artists" "~Ismail Inceoglu (ArtStati
 https://www.artstation.com/glla.rss "artists" "~Gabriela Wasiewicz (ArtStation)"
 https://www.artstation.com/daole.rss "artists" "~Dao Trong Le (ArtStation)"
 https://www.artstation.com/nikojyp.rss "artists" "~JP NIK (ArtStation)"
-https://www.artstation.com/666kart.rss "artists" "~Kan Liu (ArtStation)"
-https://www.artstation.com/artur-rosa.rss "artists" "~Artur Rosa (ArtStation)"
 https://www.artstation.com/gusart.rss "artists" "~Gustavo Arteaga (ArtStation)"
 https://www.artstation.com/arsenixc.rss "artists" "~Arseniy Chebynkin (ArtStation)"
 https://www.artstation.com/wick.rss "artists" "~Victor Anceaume (ArtStation)"
