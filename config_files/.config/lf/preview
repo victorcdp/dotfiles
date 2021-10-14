@@ -51,7 +51,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.pdf)
 		[ ! -f "${CACHE}" || rm -f "${CACHE}" ] && \
 			pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"
-		image "${CACHE}" "$2" "$3" "$4" "$5"
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
 	*.epub|*.azw3|*.mobi)
 		[ ! -f "$CACHE" || rm -f "${CACHE}" ] && \

@@ -4,7 +4,7 @@ source sb-status2d
 
 current=$(mpc current);
 
-[ -z "$current" ] && exit 0 || printf "%s%s%s" "$s2d_color6" "[$($current | cut -c1-30;)]" "$s2d_reset" && exit 0
+[ -z "$current" ] && exit 0 || printf "%s%s%s" "$s2d_color6" "[$(mpc current | cut -c1-30;)]" "$s2d_reset" && exit 0
 
 #filter() { mpc | sed "/^volume:/d;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d;/^ERROR/Q" | sed 's/\xef\xb8\x8f//g' | paste -sd ' ' -;}
 
