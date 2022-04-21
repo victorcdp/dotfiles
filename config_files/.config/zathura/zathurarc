@@ -1,9 +1,10 @@
-set sandbox none
-set statusbar-h-padding 0
-set statusbar-v-padding 0
-set page-padding 5
-set selection-clipboard clipboard
-set adjust-open "width"
+:set sandbox none
+:set statusbar-h-padding 0
+:set statusbar-v-padding 0
+:set page-padding 5
+:set selection-clipboard clipboard
+:set adjust-open "width"
+:set first-page-column 1:2
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -17,3 +18,4 @@ map g goto top
 map = adjust_window "width"
 unmap <C-k>
 unmap <C-j>
+unmap <Space>

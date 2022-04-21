@@ -5,7 +5,7 @@
 --embed-subs 
 
 # download thumbnail and embed
---embed-thumbnail
+#--embed-thumbnail
 
 #download with metadata and embed
 --add-metadata 

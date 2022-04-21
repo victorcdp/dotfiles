@@ -2,15 +2,19 @@
 # Blogs 
 https://lukesmith.xyz/rss.xml "blogs"
 https://bugswriter.com/blog/index.xml "blogs"
-https://www.archlinux.org/feeds/news/ "tech" "blogs"
-" "
+https://www.archlinux.org/feeds/news/ "blogs"
+https://jacobwsmith.xyz/rss.xml "blogs"
+https://arjunyadav.xyz/rss.xml "blogs"
+https://lukesmith.xyz/lindy.xml "blogs"
+https://latinitium.com/feed/ "blogs"
+https://www.lucalampariello.com/feed/ "blogs"
+https://elan.school/feed/ "blogs"
 
 ----------Podcasts----------
 # Podcasts
-https://notrelated.libsyn.com/rss "podcasts"
+https://notrelated.xyz/rss "podcasts"
 http://feeds.nightvalepresents.com/welcometonightvalepodcast "podcasts"
 https://anchor.fm/s/6344bafc/podcast/rss "podcasts"
-" "
 
 ----------Tech_Videos----------
 # Videos
@@ -18,7 +22,6 @@ https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3 "tech videos" "~Luke S
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "tech videos" "~Mental Outlaw (Youtube)" 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "tech videos" "~Brodie Robertson (Youtube)" 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "tech videos" "~DistroTube (Youtube)" 
-" "
 
 ----------Illustration_Artists----------
 # Artists
@@ -36,19 +39,35 @@ https://www.artstation.com/arsenixc.rss "artists" "~Arseniy Chebynkin (ArtStatio
 https://www.artstation.com/wick.rss "artists" "~Victor Anceaume (ArtStation)"
 https://www.artstation.com/rajawat.rss "artists" "~Surendra Rajawat (ArtStation)"
 https://www.artstation.com/ink4concept.rss "artists" "~Inaki Aretxa (ArtStation)"
+https://www.artstation.com/chriskarbach.rss "artists" "~Chris Karbach (ArtStation)"
+https://www.artstation.com/tsmith3d.rss "artists" "~Tyler Smith (ArtStation)"
+https://www.artstation.com/niyas.rss "artists" "~NIYAS (ArtStation)"
+https://www.artstation.com/xz_lv1q.rss "artists" "~行之 LV (Arstation)"
+https://www.artstation.com/shanhai77.rss "artists" "~Shanhai (Arstation)"
+https://www.artstation.com/qizhuyeganqiang.rss "artists" "~齐猪 (Arstation)"
+https://www.artstation.com/refiend.rss "artists" "~Max Suleimanov (Arstation)"
+https://www.artstation.com/sqqdqqk.rss "artists" "~Ming Fan (Arstation)"
+https://www.artstation.com/alvaroserpart.rss "artists" "~Álvaro Serpa (Arstation)"
+https://www.artstation.com/richardlay.rss "artists" "~Richard Lay (Artstation)"
+https://www.artstation.com/kazunari.rss "artists" "~Faiz Azhar (Artstation)"
+https://www.artstation.com/okuo.rss "artists" "~Okuo (Artstation)"
+https://www.artstation.com/fangpeipei.rss "artists" "~peI Fang (Artstation)"
+https://www.artstation.com/joejazz.rss "artists" "~Josef Barton (Artstation)"
+https://www.artstation.com/kevin_gnutzmans.rss "artists" "~Kevin Gnutzmans (Artstation)"
+https://www.artstation.com/hangmoon.rss "artists" "~Hangmoon (Artstation)"
+https://www.artstation.com/andreasrocha.rss "artists" "~Andreas Rocha (Artstation)"
 https://backend.deviantart.com/rss.xml?q=gallery%3Abisbiswas "artists" "~BisBiswas (DeviantArt)"
 https://backend.deviantart.com/rss.xml?q=gallery%3Akvacm "artists" "~kvacm (DeviantArt)"
-https://backend.deviantart.com/rss.xml?q=gallery%3Asnaku6763 "artists" "~snaku6763 (DeviantArt)"
-https://backend.deviantart.com/rss.xml?q=gallery%3Aguweiz "artists" "~guweiz (DeviantArt)"
-https://backend.deviantart.com/rss.xml?q=gallery%3Azudartslee "artists" "~Zudartslee (DeviantArt)"
-https://backend.deviantart.com/rss.xml?q=gallery%3Abirdalliance "artists" "~BirdAlliance (DeviantArt)"
 https://backend.deviantart.com/rss.xml?q=gallery%3Agydw1n "artists" "~Gydw1n (DeviantArt)"
+https://backend.deviantart.com/rss.xml?q=gallery%3Ahakhalifa "artists" "~HaKhalifa (DeviantArt)"
+https://backend.deviantart.com/rss.xml?q=gallery%3Akuldarleement "artists" "~KuldarLeement (DeviantArt)"
+https://backend.deviantart.com/rss.xml?q=gallery%3Aryky "artists" "~ryky (DeviantArt)"
+https://backend.deviantart.com/rss.xml?q=gallery%3Asevenics "artists" "~Sevenics (DeviantArt)"
 https://www.behance.net/feeds/user?username=antoniobravo "artists" "~Antonio Bravo (Behance)"
 https://www.behance.net/feeds/user?username=VoyagerIllustration "artists" "~Voyager Illustration (Behance)"
-" "
 
 ----------Music_Artists----------
 https://www.youtube.com/feeds/videos.xml?channel_id=UCiErxPh083dxFqvzmOE-iPw "music" "~Teflon Sega (Youtube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC6G2vAJrt407lwiynW116Eg "music" "~The Kid Laroi (Youtube)"
 https://www.youtube.com/feeds/videos.xml?user=TheDecemberists "music" "~The Decemberists (Youtube)"
-" "
+https://www.youtube.com/feeds/videos.xml?channel_id=UCN56BliYkXPkIaE8n5PhSaQ "music" "~thekidszn (Youtube)"

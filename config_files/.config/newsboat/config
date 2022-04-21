@@ -36,3 +36,5 @@ highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
 
 datetime-format %F
+reload-only-visible-feeds yes
+browser "brave"
