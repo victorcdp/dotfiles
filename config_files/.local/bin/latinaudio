@@ -1,0 +1,7 @@
+#! /bin/sh
+
+COUNT=$(ls | wc -l)
+COUNT=$(($COUNT+1))
+
+youtube-dl --rm-cache-dir
+youtube-dl -f "bestaudio" -o "$COUNT - %(title)s.%(ext)s" "$1"  

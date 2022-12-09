@@ -1,8 +1,9 @@
 {
   "check-book-splitter-state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAEAAAAC//////////8A/////wEAAAABAA=="
+    "__value__": "AAAA/wAAAAEAAAACAAAARgAAAEYA/////wEAAAABAA=="
   },
+  "choose_tweak_fmt": true,
   "custom_colors_for_color_dialog": [
     [
       255,
@@ -103,22 +104,43 @@
   ],
   "find-widget-state": {
     "case_sensitive": false,
-    "direction": "down",
+    "direction": "up",
     "dot_all": false,
     "mode": "normal",
-    "where": "current",
+    "where": "text",
     "wrap": true
+  },
+  "html-editor-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAD9AAAAAAAABD0AAAMTAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGEAYwB0AGkAbwBuAF8AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABIAdABvAG8AbABzAF8AYgBhAHIBAAAA3f////8AAAAAAAAAAAAAAB4AaAB0AG0AbABfAGYAbwByAG0AYQB0AF8AYgBhAHIBAAABv/////8AAAAAAAAAAA=="
+  },
+  "image-editor-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAD9AAAAAAAABD0AAAMTAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGEAYwB0AGkAbwBuAF8AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAACAAZQBkAGkAdAAtAGEAYwB0AGkAbwBuAHMALQBiAGEAcgEAAABS/////wAAAAAAAAAAAAAAHABpAG0AYQBnAGUAXwBpAG4AZgBvAF8AYgBhAHIBAAABNv////8AAAAAAAAAAA=="
+  },
+  "import-foreign-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAKoAAABYgAABMQAAAI/AAACrAAAAX4AAATAAAACOwAAAAAAAAAAB4AAAAKsAAABfgAABMAAAAI7"
   },
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAAAAAAAAAAABBkAAAQKAAAAAAAAAAAAAAQZAAAECgAAAAAAAAAAB4AAAAAAAAAAAAAABBkAAAQK"
+    "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQKAAAAAAAAAAAAAAd/AAAECgAAAAAAAAAAB4AAAAAAAAAAAAAAB38AAAQK"
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAD9AAAABAAAAAAAAAEAAAADtvwCAAAABfsAAAAkAGYAaQBsAGUAcwAtAGIAcgBvAHcAcwBlAHIALQBkAG8AYwBrAQAAAD4AAAO2AAAAWgD////7AAAAHgB0AG8AYwAtAHYAaQBlAHcAZQByAC0AZABvAGMAawAAAAAA/////wAAAFoA////+wAAACAAdABlAHgAdAAtAHMAZQBhAHIAYwBoAC0AZABvAGMAawAAAAAA/////wAAAIAA////+wAAACAAYwBoAGUAYwBrAHAAbwBpAG4AdABzAC0AZABvAGMAawAAAAAA/////wAAAIwA////+wAAACYAcwBhAHYAZQBkAC0AcwBlAGEAcgBjAGgAZQBzAC0AZABvAGMAawAAAAAA/////wAAAhYA////AAAAAQAAAoAAAAO2/AIAAAAC+wAAABgAcAByAGUAdgBpAGUAdwAtAGQAbwBjAGsBAAAAPgAAA7YAAABRAP////sAAAAaAGwAaQB2AGUALQBjAHMAcwAtAGQAbwBjAGsAAAAAAP////8AAABaAP///wAAAAIAAAAAAAAAAPwBAAAAAfsAAAAeAGMAaABlAGMAawAtAGIAbwBvAGsALQBkAG8AYwBrAAAAAAD/////AAAAkAD///8AAAADAAAAAAAAAAD8AQAAAAH7AAAAHABpAG4AcwBwAGUAYwB0AG8AcgAtAGQAbwBjAGsAAAAAAP////8AAAA7AP///wAAAI4AAAO2AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGcAbABvAGIAYQBsAC0AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABIAdABvAG8AbABzAC0AYgBhAHIBAAABJv////8AAAAAAAAAAAAAABYAcABsAHUAZwBpAG4AcwAtAGIAYQByAAAAAAD/////AAAAAAAAAAA="
+    "__value__": "AAAA/wAAAAD9AAAABAAAAAAAAAFeAAADtvwCAAAABfsAAAAkAGYAaQBsAGUAcwAtAGIAcgBvAHcAcwBlAHIALQBkAG8AYwBrAQAAAD4AAAO2AAAAWgD////7AAAAHgB0AG8AYwAtAHYAaQBlAHcAZQByAC0AZABvAGMAawAAAAAA/////wAAAFoA////+wAAACAAdABlAHgAdAAtAHMAZQBhAHIAYwBoAC0AZABvAGMAawAAAAAA/////wAAAIAA////+wAAACAAYwBoAGUAYwBrAHAAbwBpAG4AdABzAC0AZABvAGMAawAAAAAA/////wAAAIwA////+wAAACYAcwBhAHYAZQBkAC0AcwBlAGEAcgBjAGgAZQBzAC0AZABvAGMAawAAAAAA/////wAAAhYA////AAAAAQAAAdkAAAO2/AIAAAAC+wAAABgAcAByAGUAdgBpAGUAdwAtAGQAbwBjAGsBAAAAPgAAA7YAAABRAP////sAAAAaAGwAaQB2AGUALQBjAHMAcwAtAGQAbwBjAGsAAAAAAP////8AAABaAP///wAAAAIAAAAAAAAAAPwBAAAAAfsAAAAeAGMAaABlAGMAawAtAGIAbwBvAGsALQBkAG8AYwBrAAAAAAD/////AAAAkAD///8AAAADAAAAAAAAAAD8AQAAAAH7AAAAHABpAG4AcwBwAGUAYwB0AG8AcgAtAGQAbwBjAGsAAAAAAP////8AAAA7AP///wAABD0AAAO2AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGcAbABvAGIAYQBsAC0AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABIAdABvAG8AbABzAC0AYgBhAHIBAAABJv////8AAAAAAAAAAAAAABYAcABsAHUAZwBpAG4AcwAtAGIAYQByAAAAAAD/////AAAAAAAAAAA="
   },
   "recent-books": [
-    "/home/victorc/Victor/Files/Books/Joel Salatin - Everything I Want to Do Is Illegal_ War Stories from the Local Food Front (2018).epub"
+    "/home/victorc/Victor/Files/Books/Library/Johann Hari/Stolen Focus _ Why You Can't Pay Attention--and How to Think Deeply Again (4792)/Stolen Focus _ Why You Can't Pay Attention - Johann Hari.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Cal Newport/Digital Minimalism_ Choosing a Focused Life in a Noisy World (4761)/Digital Minimalism_ Choosing a Focused Lif - Cal Newport.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Cal Newport/So Good They Can't Ignore You_ Why Skills Trump Passion in the Quest for Work You Love (4790)/So Good They Can't Ignore You_ Why Skills - Cal Newport.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Gabriel Wyner/Fluent Forever (4763)/Fluent Forever - Gabriel Wyner.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Gabriel Wyner/Fluent Forever (4763)/Fluent Forever - Gabriel Wyner.epub",
+    "/home/victorc/Victor/Files/Books/Library/Dan Simmons/Ilium (1174)/Ilium - Dan Simmons.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Andrzej Sapkowski/Blood of Elves (4591)/Blood of Elves - Andrzej Sapkowski.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Madeline Miller/Circe (4567)/Circe - Madeline Miller.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Madeline Miller/The Song of Achilles (3116)/The Song of Achilles - Madeline Miller.azw3",
+    "/home/victorc/Victor/Files/Books/Library/Hackauthor2/The EasyPeasy Way to Quit Porn (4752)/The EasyPeasy Way to Quit Porn - Hackauthor2.azw3"
   ],
   "reports-ui-state": {},
   "saved_seaches_state": {
@@ -126,11 +148,19 @@
     "where": "current",
     "wrap": true
   },
-  "search-panel-visible": false,
+  "search-panel-visible": true,
   "text_search_widget_state": {
     "case_sensitive": false,
     "dot_all": true,
     "mode": "normal",
     "where": "current"
+  },
+  "toc_edit_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAABAAAAAV4AAAFuAP////8AAAAAAQE="
+  },
+  "toc_editor_window_geom": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAADRAAAAzQAABIYAAANCAAAA0QAAAM0AAASGAAADQgAAAAAAAAAAB4AAAADRAAAAzQAABIYAAANC"
   }
 }

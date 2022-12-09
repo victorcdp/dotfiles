@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# find all targets mounted
+TARGET=`find "/run/media/$USER/" -maxdepth 1 -mindepth 1 -type d | dmenu -i -p "Which Target?" || exit 1`
+
+# try a dry run first
+test $TARGET && rsync -vauP --delete --dry-run "/home/$USER/Victor" "$TARGET"
+
+backupyn=`echo -e "N\ny" | dmenu -p "Proceed?" || exit 1`
+
+[ "$backupyn" = "y" ] && rsync -vauP --delete "/home/$USER/Victor" "$TARGET"

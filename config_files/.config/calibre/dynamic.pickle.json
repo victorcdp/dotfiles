@@ -1,22 +1,46 @@
 {
   "add books dialog dir": "/home/victorc/Victor/Files/Books",
+  "add books dialog dir-last-used-filter-spec-all-files": false,
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
   "choose library location": "/home/victorc/Victor/Files/Books/Library",
   "database location dialog": "/home/victorc/Victor/Books/Library",
   "notified-version-updates": {
     "__class__": "set",
     "__value__": [
+      "5.39",
+      "5.30",
+      "5.40",
+      "5.31",
+      "5.17",
+      "5.24",
+      "5.44",
+      "5.37",
+      "5.25",
+      "5.27",
+      "5.35",
+      "5.32",
+      "5.28",
+      "5.36",
+      "5.43",
+      "5.26",
       "5.23",
-      "5.22",
-      "5.17"
+      "5.42",
+      "5.38",
+      "5.22"
     ]
   },
+  "s_r_search_mode": 0,
+  "save to disk dialog": "/home/victorc/Desktop",
   "sort_history": [
     [
-      "#id",
-      false
+      "ondevice",
+      true
     ],
     [
-      "ondevice",
+      "#id",
       false
     ],
     [
