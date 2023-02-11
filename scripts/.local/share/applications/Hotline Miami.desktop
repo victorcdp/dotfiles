@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Hotline Miami
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/219150
+Icon=steam_icon_219150
+Terminal=false
+Type=Application
+Categories=Game;
