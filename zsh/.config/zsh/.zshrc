@@ -1,6 +1,3 @@
-# Use powerline
-USE_POWERLINE="true"
-
 #manjaro zsh configuration
 ## Options section
 setopt correct                                                  # Auto correct mistakes
@@ -14,8 +11,11 @@ setopt appendhistory                                            # Immediately ap
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
 setopt histignorespace                                          # Don't save commands that start with space
-stty stop undef		# Disable ctrl-s to freeze terminal.
+stty stop undef		                                              # Disable ctrl-s to freeze terminal.
+zle_highlight=('paste:none')                                    # Gets rid of the paste highlight
 
+# Completions
+autoload -Uz compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path 
@@ -25,15 +25,49 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' menu select
 zmodload zsh/complist
+
+# History file
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTSIZE=10000000
 SAVEHIST=10000000
-export EDITOR=nvim
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
+# Environment variables set everywhere
+export EDITOR="nvim"
+export BROWSER="brave"
+  # Color man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-R
+  # File and Dir colors for ls and other outputs
+export LS_OPTIONS='--color=auto'
+
+# Useful Functions
+source "$ZDOTDIR/zsh-functions"
+
+# Normal files to source
+zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-aliases"
+zsh_add_file "zsh-prompt"
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "hlissner/zsh-autopair"
+zsh_add_plugin "olets/zsh-abbr"
+# zsh_add_completion "esc/conda-zsh-completion" false
+# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
+# More completions https://github.com/zsh-users/zsh-completions
 
 ## Keybindings section
 bindkey -e
+bindkey -v                                                      # Ctrl-R to search history
+bindkey '^R' history-incremental-search-backward                # Ctrl-R to search history, remove this later for fzf search
 bindkey '^[[7~' beginning-of-line                               # Home key
 bindkey '^[[H' beginning-of-line                                # Home key
 if [[ "${terminfo[khome]}" != "" ]]; then
@@ -59,188 +93,10 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
-## Alias section
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-
 # Theming section  
-autoload -U compinit colors zcalc
-compinit -d
-colors
-
-# Color man pages
-export LESS_TERMCAP_mb=$'\E[01;32m'
-export LESS_TERMCAP_md=$'\E[01;32m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;47;34m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;36m'
-export LESS=-R
-
-
-## Plugins section: Enable fish style features
-# Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# bind UP and DOWN arrow keys to history substring search
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^[[A' history-substring-search-up			
-bindkey '^[[B' history-substring-search-down
-
-# Offer to install missing package if command is not found
-if [[ -r /usr/share/zsh/functions/command-not-found.zsh ]]; then
-    source /usr/share/zsh/functions/command-not-found.zsh
-    export PKGFILE_PROMPT_INSTALL_MISSING=1
-fi
-
-# Set terminal window and tab/icon title
-#
-# usage: title short_tab_title [long_window_title]
-#
-# See: http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#ss3.1
-# Fully supports screen and probably most modern xterm and rxvt
-# (In screen, only short_tab_title is used)
-function title {
-  emulate -L zsh
-  setopt prompt_subst
-
-  [[ "$EMACS" == *term* ]] && return
-
-  # if $2 is unset use $1 as default
-  # if it is set and empty, leave it as is
-  : ${2=$1}
-
-  case "$TERM" in
-    xterm*|putty*|rxvt*|konsole*|ansi|mlterm*|alacritty|st*)
-      print -Pn "\e]2;${2:q}\a" # set window name
-      print -Pn "\e]1;${1:q}\a" # set tab name
-      ;;
-    screen*|tmux*)
-      print -Pn "\ek${1:q}\e\\" # set screen hardstatus
-      ;;
-    *)
-    # Try to use terminfo to set the title
-    # If the feature is available set title
-    if [[ -n "$terminfo[fsl]" ]] && [[ -n "$terminfo[tsl]" ]]; then
-      echoti tsl
-      print -Pn "$1"
-      echoti fsl
-    fi
-      ;;
-  esac
-}
-
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
-ZSH_THEME_TERM_TITLE_IDLE="%n@%m:%~"
-
-# Runs before showing the prompt
-function mzc_termsupport_precmd {
-  [[ "${DISABLE_AUTO_TITLE:-}" == true ]] && return
-  title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
-}
-
-# Runs before executing the command
-function mzc_termsupport_preexec {
-  [[ "${DISABLE_AUTO_TITLE:-}" == true ]] && return
-
-  emulate -L zsh
-
-  # split command into array of arguments
-  local -a cmdargs
-  cmdargs=("${(z)2}")
-  # if running fg, extract the command from the job description
-  if [[ "${cmdargs[1]}" = fg ]]; then
-    # get the job id from the first argument passed to the fg command
-    local job_id jobspec="${cmdargs[2]#%}"
-    # logic based on jobs arguments:
-    # http://zsh.sourceforge.net/Doc/Release/Jobs-_0026-Signals.html#Jobs
-    # https://www.zsh.org/mla/users/2007/msg00704.html
-    case "$jobspec" in
-      <->) # %number argument:
-        # use the same <number> passed as an argument
-        job_id=${jobspec} ;;
-      ""|%|+) # empty, %% or %+ argument:
-        # use the current job, which appears with a + in $jobstates:
-        # suspended:+:5071=suspended (tty output)
-        job_id=${(k)jobstates[(r)*:+:*]} ;;
-      -) # %- argument:
-        # use the previous job, which appears with a - in $jobstates:
-        # suspended:-:6493=suspended (signal)
-        job_id=${(k)jobstates[(r)*:-:*]} ;;
-      [?]*) # %?string argument:
-        # use $jobtexts to match for a job whose command *contains* <string>
-        job_id=${(k)jobtexts[(r)*${(Q)jobspec}*]} ;;
-      *) # %string argument:
-        # use $jobtexts to match for a job whose command *starts with* <string>
-        job_id=${(k)jobtexts[(r)${(Q)jobspec}*]} ;;
-    esac
-
-    # override preexec function arguments with job command
-    if [[ -n "${jobtexts[$job_id]}" ]]; then
-      1="${jobtexts[$job_id]}"
-      2="${jobtexts[$job_id]}"
-    fi
-  fi
-
-  # cmd name only, or if this is sudo or ssh, the next cmd
-  local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
-  local LINE="${2:gs/%/%%}"
-
-  title '$CMD' '%100>...>$LINE%<<'
-}
-
-autoload -U add-zsh-hook
-add-zsh-hook precmd mzc_termsupport_precmd
-add-zsh-hook preexec mzc_termsupport_preexec
-
-# File and Dir colors for ls and other outputs
-export LS_OPTIONS='--color=auto'
+autoload -Uz colors && colors
 eval "$(dircolors -b)"
-alias ls='ls $LS_OPTIONS'
-
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp -uq)"
-    trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' '^ulfcd\n'
+compinit -d
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -248,40 +104,6 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
-
-#Manjaro zsh prompt
-() {
-  emulate -L zsh
-
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # Determine terminal capabilities.
-  {
-    if ! zmodload zsh/langinfo zsh/terminfo ||
-       [[ $langinfo[CODESET] != (utf|UTF)(-|)8 || $TERM == (dumb|linux) ]] ||
-       (( terminfo[colors] < 256 )); then
-      # Don't use the powerline config. It won't work on this terminal.
-      local USE_POWERLINE=false
-      # Define alias `x` if our parent process is `login`.
-      local parent
-      if { parent=$(</proc/$PPID/comm) } && [[ ${parent:t} == login ]]; then
-        alias x='startx ~/.xinitrc'
-      fi
-    fi
-  } 2>/dev/null
-
-  if [[ $USE_POWERLINE == false ]]; then
-    # Use 8 colors and ASCII.
-    source /usr/share/zsh/p10k-portable.zsh
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
-  else
-    # Use 256 colors and UNICODE.
-    source /usr/share/zsh/p10k.zsh
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
-  fi
-}
-
 
 #my stuff
 # ssh-agent

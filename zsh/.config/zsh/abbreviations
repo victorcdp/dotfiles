@@ -1,0 +1,3 @@
+abbr -g la="ls -la"
+abbr archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+abbr zsh-update-plugins="find /home/victorc/.config/zsh/plugins -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
