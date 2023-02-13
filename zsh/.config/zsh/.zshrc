@@ -26,27 +26,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
-# History file
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
-HISTSIZE=10000000
-SAVEHIST=10000000
-WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
-
-# Environment variables set everywhere
-export EDITOR="nvim"
-export BROWSER="brave"
-  # Color man pages
-export LESS_TERMCAP_mb=$'\E[01;32m'
-export LESS_TERMCAP_md=$'\E[01;32m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;47;34m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;36m'
-export LESS=-R
-  # File and Dir colors for ls and other outputs
-export LS_OPTIONS='--color=auto'
-
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 
@@ -54,6 +33,7 @@ source "$ZDOTDIR/zsh-functions"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
+zsh_add_file "exports"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
