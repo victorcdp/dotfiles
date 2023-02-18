@@ -1,0 +1,11 @@
+# download with all subtitles
+--sub-langs all
+
+# embed the subs in the file
+--embed-subs 
+
+#download with metadata and embed
+--add-metadata 
+
+# prefer best quality
+-f best
