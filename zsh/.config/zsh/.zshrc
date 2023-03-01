@@ -26,6 +26,9 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
+# add scripts to path
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.local/bin/scripts/:$HOME/.local/bin/statusbar/:$PATH"
+
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 
@@ -34,6 +37,8 @@ zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
 zsh_add_file "exports"
+zsh_add_file "work-functions"
+zsh_add_file "work-aliases"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

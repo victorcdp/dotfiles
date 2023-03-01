@@ -1,0 +1,61 @@
+#!/bin/sh
+
+alias ac="ant compile"
+alias acc="ant clean compile"
+alias ad="ant deploy"
+alias af="ant format-source"
+alias afcb="ant format-source-current-branch"
+
+alias cdm="cd_module"
+
+# Liferay-Portal Shortcuts
+alias cdt="cd ~/dev/projects/liferay-portal"
+alias cdte="cd ~/dev/projects/liferay-portal-ee"
+alias cdt73="cd ~/dev/projects/7.3.x"
+alias cdt72="cd ~/dev/projects/7.2.x"
+alias cdt71="cd ~/dev/projects/7.1.x"
+alias cdt70="cd ~/dev/projects/7.0.x"
+alias cdt62="cd ~/dev/projects/6.2.x"
+alias cdt61="cd ~/dev/projects/6.1.x"
+alias cata="~/dev/bundles/master/tomcat-9.0.71/bin/./catalina.sh jpda run"
+alias cata73="~/dev/bundles/7.3.x/tomcat-9.0.68/bin/./catalina.sh jpda run"
+alias cata72="~/dev/bundles/7.2.x/tomcat-9.0.56/bin/./catalina.sh jpda run"
+alias cata71="~/dev/bundles/7.1.x/tomcat-9.0.56/bin/./catalina.sh jpda run"
+alias cata70="~/dev/bundles/7.0.x/tomcat-8.5.63/bin/./catalina.sh jpda run"
+alias cata62="~/dev/bundles/6.2.x/tomcat-7.0.42/bin/./catalina.sh jpda run"
+alias cata61="~/dev/bundles/6.1.x/tomcat-7.0.40/bin/./catalina.sh jpda run"
+alias cbd="cd ~/dev/bundles/master"
+alias cbd73="cd ~/dev/bundles/7.3.x"
+alias cbd72="cd ~/dev/bundles/7.2.x"
+alias cbd71="cd ~/dev/bundles/7.1.x"
+alias cbd70="cd ~/dev/bundles/7.0.x"
+alias cbd62="cd ~/dev/bundles/6.2.x"
+alias cbd61="cd ~/dev/bundles/6.1.x"
+
+alias d="docker"
+alias dmysqlclient="docker exec -it galatians-mysql mysql -utest -ptest"
+alias dmysqlserver="docker run --name galatians-mysql --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=lportal -e MYSQL_PASSWORD=test -e MYSQL_USER=test -p 3306:3306 mysql:8 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+alias dpsqlclient="docker exec -it galatians-psql psql -U postgres"
+alias dpsqlserver="docker run --name galatians-psql --rm -d -e POSTGRES_PASSWORD=test -p 5432:5432 postgres:13"
+
+alias g="git"
+alias gi="gpr info"
+alias gg="git_grep"
+alias gpr="~/dev/projects/git-tools/git-pull-request/git-pull-request.sh"
+
+alias la="ls -la --group-directories-first"
+alias v="/usr/local/bin/./nvim"
+alias vim="/usr/local/bin/./nvim"
+alias osub="/opt/sublime_text/sublime_text ${@}"
+#alias gw='/home/me/dev/projects/liferay-portal/gradlew'
+alias gwcd="gw clean deploy"
+alias gwti='gw testIntegration --tests'
+alias gwbr='gw buildREST'
+alias gwbs='gw buildService'
+alias gwfs='gw formatsource'
+alias antbs='ant build-service-portal'
+alias antfs='ant format-source-current-branch'
+
+alias wipeportaldb="mysql -u root -Bse 'drop database lportal; create database lportal default character set utf8;'"
+alias killjava="killall -9 java"
+alias killportal="ps aux | grep tomcat | grep -v grep | tr -s \" \" | cut -d \" \" -f 2 | xargs kill -9"

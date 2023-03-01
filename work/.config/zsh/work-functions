@@ -1,0 +1,279 @@
+#!/bin/sh
+
+function cd_module() {
+	local git_dir="$(git rev-parse --show-toplevel)"
+
+	local module_dir="$(
+		git -C "${git_dir}" ls-files -- \
+			':!:**/src/**' \
+			\
+			'*.bnd' \
+			'*build.xml' \
+			'*pom.xml' |
+
+			#
+			# Get the directory name with sed instead of dirname because it is much faster
+			#
+
+			sed -E \
+				-e 's,[^/]*$,,g' \
+				\
+				-e 's,/$,,g' \
+				-e '/^$/d' |
+
+			#
+			# Remove duplicates because some modules have more than one *.bnd file
+			#
+
+			uniq |
+
+			#
+			# Pass the results to fzf
+			#
+			fzf \
+				--exit-0 \
+				--no-multi \
+				--query "$*" \
+				--select-1 \
+			;
+	)"
+
+	if [ -n "${module_dir}" ]
+	then
+		cd "${git_dir}/${module_dir}" || return 1
+	fi
+}
+
+cleanbundle() {
+  if [[ "$PWD" = */dev/bundles/* ]]; then 
+    rm -rf osgi/state/ &&
+    rm -rf tomcat-9.0.*/temp/ &&
+    rm -rf tomcat-9.0.*/work/ &&
+    rm -rf data/* &&
+    echo "bundle cleaned"
+  else
+    echo "not in bundle folder"
+  fi
+}
+
+#Show Current Branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+fFP() {
+	if [ -z "$1" ]
+		then
+			echo "Please specifcy the branch information: 62 70 71 fix"
+			return 0
+	elif [ -z "$2" ]
+		then
+			echo "Please specify the fix-pack/build information"
+			return 0
+	fi
+
+	if [ "$1" = "62" ]
+		then
+			git fetch -n upstream tags/fix-pack-base-6210-sp"$2":refs/tags/fix-pack-base-6210-sp"$2"
+	elif [ "$1" = "70" ]
+		then
+			git fetch -n upstream tags/fix-pack-de-"$2"-7010:refs/tags/fix-pack-de-"$2"-7010
+	elif [ "$1" = "71" ]
+		then
+			git fetch -n upstream tags/fix-pack-dxp-"$2"-7110:refs/tags/fix-pack-dxp-"$2"-7110
+	elif [ "$1" = "72" ]
+		then
+			git fetch -n upstream tags/fix-pack-dxp-"$2"-7210:refs/tags/fix-pack-dxp-"$2"-7210
+	elif [ "$1" = "73" ]
+		then
+			git fetch -n upstream tags/fix-pack-dxp-"$2"-7310:refs/tags/fix-pack-dxp-"$2"-7310
+	elif [ "$1" = "74" ]
+		then
+			git fetch -n upstream tags/7.4.13-u"$2":refs/tags/7.4.13-u"$2"
+	elif [ "$1" = "mp" ]
+		then
+			git fetch -n upstream tags/"$2":refs/tags/"$2"
+	elif [ "$1" = "fix" ]
+		then
+			git fetch -n upstream tags/fix-pack-fix-"$2":refs/tags/fix-pack-fix-"$2"
+	fi
+}
+
+cdl() {
+  cd "$@" && ls -la;
+}
+
+branchsync(){
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+	git checkout -f "$current_branch"
+	git fetch -n upstream
+	git merge upstream/"$current_branch"
+	git push -f origin "$current_branch"
+}
+
+portaltrash() {
+  rm -R .git/gc.log
+	rm -R .git/gitk.cache
+	git clean -xdf -e '**/*.iml' -e '.gradle/gradle.properties' -e '.idea' -e '.m2' -e "app.server.$USER.properties" -e "build.$USER.properties"
+}
+
+purgenode() {
+  sudo dnf remove nodejs npm -y
+  rm -rf /usr/local/lib/node*
+  rm -rf /usr/local/include/node*
+  rm -rf ~/.npm
+}
+
+everyday(){
+	portalup=$(sudo netstat -tulpn | grep :8000)
+	sudo dnf -y update
+	if [[ ${portalup} == "" ]]; then 
+		cd ~/dev/projects/liferay-portal
+    haschanges=0 && [[ $(git status --porcelain | wc -l) -gt 0 ]] && haschanges=1
+    isinmaster=0 && [[ $(git rev-parse --abbrev-ref HEAD) == "master" ]] && isinmaster=1
+
+    [[ haschanges -eq 1 ]] && git stash
+    [[ isinmaster -eq 0 ]] && git checkout master
+    git pull --rebase upstream master
+    git push origin master
+    [[ isinmaster -eq 0 ]] && git checkout - && git rebase master
+    [[ haschanges -eq 1 ]] && git stash pop
+    portaltrash
+    ant all
+		cd -
+	else 
+		echo "ERRO: Talvez o liferay-portal esteja rodando na sua maquina"; 
+	fi
+}
+
+function customize_path {
+	export ANT_HOME="/opt/java/ant"
+	export ANT_OPTS="-Xmx6144m"
+
+	export GRADLE_OPTS=${ANT_OPTS}
+
+	if [ -z ${JAVA_HOME+x} ]
+	then
+		export JAVA_HOME="/opt/java/jdk"
+	fi
+
+	export NPM_CONFIG_PREFIX=~/.npm-global
+
+	export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:/opt/java/maven/bin:~/test:${PATH}"
+}
+
+function execute_gradlew {
+	if [ -e ../gradlew ]
+	then
+		../gradlew ${@}
+	elif [ -e ../../gradlew ]
+	then
+		../../gradlew ${@}
+	elif [ -e ../../../gradlew ]
+	then
+		../../../gradlew ${@}
+	elif [ -e ../../../../gradlew ]
+	then
+		../../../../gradlew ${@}
+	elif [ -e ../../../../../gradlew ]
+	then
+		../../../../../gradlew ${@}
+	elif [ -e ../../../../../../gradlew ]
+	then
+		../../../../../../gradlew ${@}
+	elif [ -e ../../../../../../../gradlew ]
+	then
+		../../../../../../../gradlew ${@}
+	elif [ -e ../../../../../../../../gradlew ]
+	then
+		../../../../../../../../gradlew ${@}
+	elif [ -e ../../../../../../../../../gradlew ]
+	then
+		../../../../../../../../../gradlew ${@}
+	else
+		echo "Unable to find locate Gradle wrapper."
+	fi
+}
+
+function git_grep {
+	if [ ${#} -eq 1 ]
+	then
+		git --no-pager grep --files-with-matches "${1}"
+	elif [ ${#} -eq 2 ]
+	then
+		git --no-pager grep --files-with-matches "${1}" -- "${2}"
+	elif [ ${#} -eq 3 ]
+	then
+		git --no-pager grep --files-with-matches "${1}" -- "${2}" "${3}"
+	elif [ ${#} -eq 4 ]
+	then
+		git --no-pager grep --files-with-matches "${1}" -- "${2}" "${3}" "${4}"
+	fi
+}
+
+#function gw {
+#	execute_gradlew "${@//\//:}" --daemon
+#}
+
+gw () {
+	local root_level
+	root_level=$(git rev-parse --show-toplevel 2>/dev/null)
+	if [[ -n $root_level && -f "$root_level/gradlew" ]]
+	then
+		root_level="$root_level/gradlew"
+	else
+		root_level=$(command -v gradle)
+	fi
+	"$root_level" --console=rich "$@"
+}
+
+function parse_git_branch {
+	GIT_DIR_NAME=$(git rev-parse --show-toplevel)
+
+	GIT_DIR_NAME=${GIT_DIR_NAME##*/}
+
+	if [[ "${GIT_DIR_NAME}" =~ -ee-[0-9][^\-]*$ ]]
+	then
+		echo "ee-${GIT_DIR_NAME##*-ee-}"
+	elif [[ "${GIT_DIR_NAME}" =~ -[0-9][^\-]*$ ]]
+	then
+		echo "${GIT_DIR_NAME##*-}"
+	elif [[ "${GIT_DIR_NAME}" =~ com-liferay-osb-asah-private$ ]]
+	then
+		echo "7.0.x"
+	elif [[ "${GIT_DIR_NAME}" =~ -private$ ]]
+	then
+		echo "${GIT_DIR_NAME}" | sed 's/.*-\([^\-]*\)-private$/\1-private/'
+	else
+		echo "master"
+	fi
+}
+
+IJ_CLONE_PATH=/home/me/dev/projects/liferay-intellij
+
+ij() {
+        ${IJ_CLONE_PATH}/intellij_libsources "$@"
+}
+
+function parse_git_current_branch {
+	git rev-parse --abbrev-ref HEAD 2>/dev/null
+}
+
+function parse_git_current_branch_with_parantheses {
+	parse_git_current_branch | sed 's/.*/(&)/'
+}
+
+function switch_to_java_7 {
+	export JAVA_HOME="/opt/java/jdk7"
+
+	export PATH="${JAVA_HOME}/bin:${PATH}"
+}
+
+function switch_to_java18 {
+	export JAVA_HOME="/opt/java/jdk18"
+
+	export PATH="${JAVA_HOME}/bin:${PATH}"
+}
+
+customize_path
+remaps
