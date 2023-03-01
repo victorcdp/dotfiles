@@ -84,20 +84,3 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
-
-#my stuff
-# ssh-agent
-eval "$(ssh-agent -s)" &> /dev/null
-ssh-add ~/.ssh/victorcdp &> /dev/null
-
-# start nvm
-source /usr/share/nvm/init-nvm.sh
-
-#start pyend
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-#pipenv
-export PIPENV_VENV_IN_PROJECT=1
-
