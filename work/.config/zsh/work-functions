@@ -122,6 +122,29 @@ portaltrash() {
 	git clean -xdf -e '**/*.iml' -e '.gradle/gradle.properties' -e '.idea' -e '.m2' -e "app.server.$USER.properties" -e "build.$USER.properties"
 }
 
+cata(){
+  emulate -LR bash
+	tomcatfile=$(find . -name 'tomcat*' -type d)
+	if [[ $tomcatfile == "" ]]; then
+		previousdirectory="../"
+		for i in {1..5}; do
+  			tomcatfile=$(find ${previousdirectory} -name 'tomcat*' -type d)
+			if [[ $tomcatfile == "" ]]; then previousdirectory+="../"; else break; fi
+		done
+	fi
+	if [[ $tomcatfile == "" ]]; then echo "ERROR RUNNING COMMAND: check if the command was run inside a bundle"; else ./$tomcatfile/bin/catalina.sh jpda run; fi
+}
+
+cdbb(){
+  emulate -LR bash
+	if [ -f app.server.$USER.properties ]; then
+		bundlepath=$(grep -Po '(?<=dir=)[^*]*' app.server.$USER.properties)
+		cd $bundlepath
+	else
+		echo "ERROR RUNNING COMMAND: unable to find the app.server.$USER.properties file" 
+	fi
+}
+
 purgenode() {
   emulate -LR bash
   sudo dnf remove nodejs npm -y
