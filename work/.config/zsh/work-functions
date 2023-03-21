@@ -145,6 +145,26 @@ cdbb(){
 	fi
 }
 
+createb(){
+        if [[ $1 == "" ]]
+        then
+                name=$(git branch --show-current)
+        else
+                name=$1
+        fi
+
+        if [[ $name == "" ]]
+        then
+                echo "ERROR WHEN TRYING TO EXECUTE COMMAND: Branch not found or parameter not entered"
+        else
+                echo "app.server.parent.dir=/home/$USER/dev/bundles/${name}" > app.server.$USER.properties
+                cp ~/dev/tags/build.$USER.properties .
+                ant setup-profile-dxp
+                ant all
+                echo "BUNDLE CREATION COMPLETED: Bundle created on path ~/dev/bundles/${name}"
+        fi
+}
+
 purgenode() {
   emulate -LR bash
   sudo dnf remove nodejs npm -y
