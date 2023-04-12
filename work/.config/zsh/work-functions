@@ -102,6 +102,13 @@ fFP() {
 	fi
 }
 
+asci() {
+  emulate -LR bash
+	ant setup-sdk
+	ant compile
+	ant install-portal-snapshots
+}
+
 cdl() {
   cd "$@" && ls -la;
 }
@@ -188,8 +195,6 @@ everyday(){
     git push origin master
     [[ isinmaster -eq 0 ]] && git checkout - && git rebase master
     [[ haschanges -eq 1 ]] && git stash pop
-    portaltrash
-    ant all
 		cd -
 	else 
 		echo "ERRO: Talvez o liferay-portal esteja rodando na sua maquina"; 
