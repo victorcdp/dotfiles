@@ -102,8 +102,8 @@ fFP() {
 	fi
 }
 
-asci() {
   emulate -LR bash
+asci() {
 	ant setup-sdk
 	ant compile
 	ant install-portal-snapshots
@@ -178,6 +178,54 @@ purgenode() {
   rm -rf /usr/local/lib/node*
   rm -rf /usr/local/include/node*
   rm -rf ~/.npm
+}
+
+wipedb() {
+  emulate -LR bash
+        if [[ $1 == "" ]]
+        then
+                name=$(lportal)
+        else
+                name=$1
+        fi
+
+        if [[ $name == "" ]]
+        then
+                echo "ERROR WHEN TRYING TO EXECUTE COMMAND"
+        else
+                mysql -u root -Bse `drop database ${name}; create database ${name} default character set utf8;`
+                echo "${name} database wiped"
+        fi
+}
+
+# todo function to wipe specifically the db of the bundle in which the user is currently at
+wipebundledb() {
+  emulate -LR bash
+
+}
+
+# todo function to create a new specified db and then input it into the portal-ext.properties
+setupbundledb() {
+  emulate -LR bash
+
+}
+
+createdb() {
+  emulate -LR bash
+        if [[ $1 == "" ]]
+        then
+                name=$(lportal)
+        else
+                name=$1
+        fi
+
+        if [[ $name == "" ]]
+        then
+                echo "ERROR WHEN TRYING TO EXECUTE COMMAND"
+        else
+                mysql -u root -Bse `create database ${name} default character set utf8;`
+                echo "${name} database wiped"
+        fi
 }
 
 everyday(){
