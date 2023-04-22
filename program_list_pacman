@@ -1,63 +1,67 @@
-bc
-dunst
-libnotify
-mpc
-mpd
-neofetch
-neovim
-noto-fonts
-noto-fonts-emoji
-pamixer
-pcmanfm
-picom
-pulseaudio
-pulseaudio-alsa
-pulsemixer
-python-pywal
-sddm
-stow
-sxiv
-ueberzug
-unclutter
-xclip
-xwallpaper
-zsh
-zsh-autosuggestions
-zsh-syntax-highlighting
-ttf-linux-libertine
-dosfstools
-exfat-utils
-ffmpeg
-mpv
-man-db
-ncmpcpp
-newsboat
-ntfs-3g
-unrar
-unzip
-unarchiver
-youtube-dl
-zathura
-zathura-cb
-zathura-djvu
-zathura-pdf-mupdf
-poppler
-mediainfo
-atool
-fzf
-ffmpegthumbnailer
-imagemagick
-bat
-p7zip
-catdoc
-docx2txt
-odt2txt
-gnumeric
-libcdio
-transmission-cli
-transmission-gtk
-trash-cli
-openssh
-xdotool
-moreutils
-maim
+bc                                          # cmd calculator
+steam                                       # steam for games
+arandr                                      # customize monitor arrangements
+gnome-keyring                               # system keyring
+python-qdarkstyle                           # dark QT theme
+dunst                                       # notification daemon
+libnotify                                   # library for sending notifications to a daemon
+mpc                                         # cmd interface to mpd
+mpd                                         # music player daemon
+ncmpcpp                                     # music player
+playerctl                                   # mpris media player controller
+neovim                                      # best cmd text editor
+noto-fonts                                  # fonts
+noto-fonts-emoji                            # fonts
+ttf-linux-libertine                         # fonts
+ttf-jetbrains-mono-nerd                     # fonts
+ttf-roboto-mono-nerd                        # fonts
+xcape                                       # special key mappings
+pamixer                                     # pulseaudio command line mixer
+pulseaudio                                  # audio manager
+pulseaudio-alsa                             # audio manager for ALSA
+pulsemixer                                  # cli and curses mixer for pulseaudio
+python-pywal                                # generate color-schemes on the fly from images
+pcmanfm                                     # simple GUI file editor for emergencies
+sddm                                        # simple display manager
+stow                                        # for managing dotfiles
+sxiv                                        # simple x image viewer
+unclutter                                   # hides mouse when not being used
+xclip                                       # cmd interface to clipboard
+xwallpaper                                  # wallpaper setter
+zsh                                         # best shell
+dosfstools                                  # DOS filesystem utilities
+exfat-utils                                 # exfat filesystem utilities
+ntfs-3g                                     # NTFS filesystem support
+ffmpeg                                      # cmd video editing library
+mpv                                         # simple video player
+man-db                                      # man pages
+newsboat                                    # rss feed reader
+unrar                                       # RAR uncompression
+unzip                                       # ZIP uncompression
+unarchiver                                  # general unconpression
+atool                                       # managing file archives of various types
+yt-dlp                                      # download videos
+zathura                                     # base reader
+zathura-cb                                  # support for cbz
+zathura-djvu                                # support for djvu
+zathura-pdf-mupdf                           # support for pdf
+poppler                                     # pdf rendering library
+mediainfo                                   # technical info about media files
+fzf                                         # fuzzy finder
+ffmpegthumbnailer                           # lightweight video thumbnailer
+imagemagick                                 # image editing library
+bat                                         # enhanced cat
+exa                                         # enhanced ls
+p7zip                                       # cmd port of 7-zip
+catdoc                                      # convertor for microsoft office to text
+docx2txt                                    # convertor for DOCX to text
+odt2txt                                     # convertor for ODT to text
+gnumeric                                    # spreadsheet program
+libcdio                                     # disc input and control library
+trash-cli                                   # cmd trashcan
+openssh                                     # ssh package
+xdotool                                     # x11 automation tool
+moreutils                                   # useful GNU programs
+maim                                        # screenshot tool
+rofi                                        # app launcher
+light                                       # cli brightness manager

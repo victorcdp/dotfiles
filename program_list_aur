@@ -1,11 +1,16 @@
-betterlockscreen
-lf
-libxft-bgra
-puddletag
-ttf-ms-fonts
-epub-thumbnailer-git
-ashuffle
-deemix-gui-git
-go-mtpfs-git
-notion-app-enhanced
-samrewritten-git
+awesome-git                                  # best window manager
+pfetch-git                                   # system information tool to look cool
+betterlockscreen                             # pretty lockscreen
+picom-arian8j2-git                           # picom fork with window transition animations
+lf                                           # cli file manager
+libxft-bgra-git                              # allows colored emojis in suckless software
+puddletag                                    # music tag manager
+ttf-ms-fonts                                 # core TTF Fonts from Microsoft
+ttf-google-sans                              # fonts
+epub-thumbnailer-git                         # e-books thumbnailer
+ashuffle                                     # library-wide shuffle for mpd
+deemix-gui-git                               # deemix for downloading songs
+go-mtpfs-git                                 # mount android devices
+notion-app-enhanced                          # notion app
+samrewritten-git                             # managing steam achievements
+brave-bin                                    # best browser
