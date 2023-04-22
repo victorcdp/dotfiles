@@ -25,5 +25,6 @@ stow zsh # Just my zsh config
 An updated list of all the programs I use can be found in the `programs` directory and can be installed by running:
 
 ```bash
-pacman -S - < programs/program_list_pacman
+pacman -S - < program_list_pacman
+yay -S - < program_list_aur
 ```
