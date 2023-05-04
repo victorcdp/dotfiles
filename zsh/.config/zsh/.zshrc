@@ -1,4 +1,3 @@
-#manjaro zsh configuration
 ## Options section
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
@@ -26,6 +25,11 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' menu select
 zmodload zsh/complist
+
+# History in cache directory:
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
 # add scripts to path
 export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.local/bin/scripts/:$HOME/.local/bin/statusbar/:$PATH"
