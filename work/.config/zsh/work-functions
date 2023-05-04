@@ -231,7 +231,7 @@ createdb() {
 everyday(){
   emulate -LR bash
 	portalup=$(sudo netstat -tulpn | grep :8000)
-	sudo dnf -y update
+	sudo apt update && sudo apt upgrade -y
 	if [[ ${portalup} == "" ]]; then 
 		cd ~/dev/projects/liferay-portal
     haschanges=0 && [[ $(git status --porcelain | wc -l) -gt 0 ]] && haschanges=1
@@ -357,7 +357,7 @@ function parse_git_branch {
 	fi
 }
 
-IJ_CLONE_PATH=/home/me/dev/projects/liferay-intellij
+IJ_CLONE_PATH=/home/$USER/dev/projects/liferay-intellij
 
 ij() {
   emulate -LR bash
