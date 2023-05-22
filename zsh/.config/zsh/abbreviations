@@ -1,6 +1,6 @@
 abbr -g "thisbranch"="$(git rev-parse --abbrev-ref HEAD)"
 abbr "archlinx-fix-keys"="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-abbr "la"="ls -la"
+abbr "la"="ls -lA --group-directories-first"
 abbr "v"="nvim"
 abbr "vim"="nvim"
 abbr "zsh-update-plugins"="find /home/victorc/.config/zsh/plugins -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"

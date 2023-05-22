@@ -59,3 +59,4 @@ alias antfs='ant format-source-current-branch'
 alias wipeportaldb="mysql -u root -Bse 'drop database lportal; create database lportal default character set utf8;'"
 alias killjava="killall -9 java"
 alias killportal="ps aux | grep tomcat | grep -v grep | tr -s \" \" | cut -d \" \" -f 2 | xargs kill -9"
+alias db="mysql -u root"

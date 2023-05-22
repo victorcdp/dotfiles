@@ -181,7 +181,6 @@ purgenode() {
 }
 
 wipedb() {
-  emulate -LR bash
         if [[ $1 == "" ]]
         then
                 name=$(lportal)
@@ -193,8 +192,18 @@ wipedb() {
         then
                 echo "ERROR WHEN TRYING TO EXECUTE COMMAND"
         else
-                mysql -u root -Bse `drop database ${name}; create database ${name} default character set utf8;`
+                mysql -u root -Bse "drop database ${name}; create database ${name} default character set utf8;" &&
                 echo "${name} database wiped"
+        fi
+}
+
+removedb() {
+        if [[ $1 == "" ]]
+        then
+                echo "Input a db name"
+        else
+                mysql -u root -Bse "drop database ${1};" &&
+                echo "${1} database dropped"
         fi
 }
 
@@ -211,7 +220,6 @@ setupbundledb() {
 }
 
 createdb() {
-  emulate -LR bash
         if [[ $1 == "" ]]
         then
                 name=$(lportal)
@@ -223,15 +231,15 @@ createdb() {
         then
                 echo "ERROR WHEN TRYING TO EXECUTE COMMAND"
         else
-                mysql -u root -Bse `create database ${name} default character set utf8;`
-                echo "${name} database wiped"
+                mysql -u root -Bse "create database ${name} default character set utf8;" &&
+                echo "${name} database created"
         fi
 }
 
 everyday(){
   emulate -LR bash
 	portalup=$(sudo netstat -tulpn | grep :8000)
-	sudo apt update && sudo apt upgrade -y
+#	sudo apt update && sudo apt upgrade -y
 	if [[ ${portalup} == "" ]]; then 
 		cd ~/dev/projects/liferay-portal
     haschanges=0 && [[ $(git status --porcelain | wc -l) -gt 0 ]] && haschanges=1
@@ -253,6 +261,7 @@ function customize_path {
   emulate -LR bash
 	export ANT_HOME="/opt/java/ant"
 	export ANT_OPTS="-Xmx6144m"
+	export PATH="$HOME/jpm:$HOME/jpm/bin:$HOME/jpm/bin/blade/:$PATH"
 
 	export GRADLE_OPTS=${ANT_OPTS}
 
@@ -390,3 +399,4 @@ function switch_to_java18 {
 
 customize_path
 remaps
+export SSH_AUTH_SOCK=~/.1password/agent.sock
