@@ -58,12 +58,17 @@ cleanbundle() {
   fi
 }
 
+playnotif() {
+	emulate -LR bash
+	ffplay -v 0 -nodisp -autoexit ~/Downloads/notif-sound.mp3
+}
+
 #Show Current Branch
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-fFP() {
+ffp() {
   emulate -LR bash
 	if [ -z "$1" ]
 		then
@@ -169,6 +174,7 @@ createb(){
                 ant setup-profile-dxp
                 ant all
                 echo "BUNDLE CREATION COMPLETED: Bundle created on path ~/dev/bundles/${name}"
+				notify-send "bundle creation complete" && ffplay -v 0 -nodisp -autoexit ~/Downloads/notif-sound.mp3
         fi
 }
 
@@ -236,12 +242,9 @@ createdb() {
         fi
 }
 
-everyday(){
+syncmaster(){
   emulate -LR bash
-	portalup=$(sudo netstat -tulpn | grep :8000)
-#	sudo apt update && sudo apt upgrade -y
-	if [[ ${portalup} == "" ]]; then 
-		cd ~/dev/projects/liferay-portal
+	cd ~/dev/projects/liferay-portal
     haschanges=0 && [[ $(git status --porcelain | wc -l) -gt 0 ]] && haschanges=1
     isinmaster=0 && [[ $(git rev-parse --abbrev-ref HEAD) == "master" ]] && isinmaster=1
 
@@ -251,10 +254,7 @@ everyday(){
     git push origin master
     [[ isinmaster -eq 0 ]] && git checkout - && git rebase master
     [[ haschanges -eq 1 ]] && git stash pop
-		cd -
-	else 
-		echo "ERRO: Talvez o liferay-portal esteja rodando na sua maquina"; 
-	fi
+	cd -
 }
 
 function customize_path {
