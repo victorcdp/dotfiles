@@ -5,7 +5,8 @@ alias acc="ant clean compile"
 alias ad="ant deploy"
 alias af="ant format-source"
 alias afcb="ant format-source-current-branch"
-alias aa="portaltrash && ant all && notify-send 'ant all finished' && playnotif"
+alias aa="portaltrash && ant setup-profile-dxp && ant all && notify-send 'ant all finished' && playnotif"
+alias email="java -jar ~/dev/fakeSMTP-latest/fakeSMTP-2.0.jar"
 
 alias cdm="cd_module"
 

@@ -68,6 +68,10 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+cleandocker() {
+	docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q);
+}
+
 ffp() {
   emulate -LR bash
 	if [ -z "$1" ]
@@ -330,17 +334,34 @@ function git_grep {
 #	execute_gradlew "${@//\//:}" --daemon
 #}
 
+# gw () {
+#   emulate -LR bash
+# 	local root_level
+# 	root_level=$(git rev-parse --show-toplevel 2>/dev/null)
+# 	if [[ -n $root_level && -f "$root_level/gradlew" ]]
+# 	then
+# 		root_level="$root_level/gradlew"
+# 	else
+# 		root_level=$(command -v gradle)
+# 	fi
+# 	"$root_level" --console=rich "$@"
+# }
+
 gw () {
-  emulate -LR bash
-	local root_level
-	root_level=$(git rev-parse --show-toplevel 2>/dev/null)
-	if [[ -n $root_level && -f "$root_level/gradlew" ]]
-	then
-		root_level="$root_level/gradlew"
-	else
-		root_level=$(command -v gradle)
-	fi
-	"$root_level" --console=rich "$@"
+	emulate -LR bash
+	local dir="."
+	while [[ -d "${dir}" ]]
+	do
+		if [[ -x "${dir}/gradlew" ]]
+		then
+			echo "Using Gradle wrapper at $(realpath ${dir})"
+			"${dir}/gradlew" "$@"
+			return
+		fi
+		dir="${dir}/.."
+	done
+	echo "Using global Gradle executable"
+	gradle --console=rich "$@"
 }
 
 function parse_git_branch {

@@ -1,4 +1,5 @@
 abbr -g "thisbranch"="$(git rev-parse --abbrev-ref HEAD)"
+abbr -g "glg"="git log --grep"
 abbr "archlinx-fix-keys"="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr "la"="ls -lA --group-directories-first"
 abbr "v"="nvim"

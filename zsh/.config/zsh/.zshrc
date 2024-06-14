@@ -94,3 +94,7 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
+
+# fnm
+export PATH="/home/victorc/.local/share/fnm:$PATH"
+eval "`fnm env`"
